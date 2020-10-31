@@ -49,11 +49,11 @@
 	<div id="app">
 		<div class="col-md-12 bg-white" >
 
-        @include('layouts.frontend.partial.header')
+        @include('layouts.partial.header')
 
         @yield('content')
 
-         @include('layouts.frontend.partial.footer')
+         @include('layouts.partial.footer')
 
 	</div>
 
