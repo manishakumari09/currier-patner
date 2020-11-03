@@ -25,11 +25,12 @@
 	<link rel="stylesheet" href="{{asset('assets/css/use.fontawesome.com/releases/v5.6.3/css/all.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/slick.css')}}"/>
 	<link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
-	<link rel="stylesheet" href="{{asset('assets/css/simplebar.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+	<link rel="stylesheet" href="{{asset('assets/css/super-admin.css')}}" />
 	<link rel="stylesheet" media="screen and (max-width:1200px)" href="{{asset('assets/css/responsive.css')}}">
 	<link rel="stylesheet" href="{{asset('assets/css/all8a7b.css?id=b3f2f74720775e520af7')}}">
-
-
+    <link rel="stylesheet" href="{{asset('//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css')}}">
+    <link rel="stylesheet" href="{{asset('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')}}">
 
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -59,7 +60,7 @@
 
 	<!-- Load Facebook SDK for JavaScript -->
 	<div id="fb-root"></div>
-	<script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+	<script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
 	  window.fbAsyncInit = function() {
 		FB.init({
 		  xfbml            : true,
@@ -73,7 +74,11 @@
 	  js = d.createElement(s); js.id = id;
 	  js.src = '../connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
 	  fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
+    }(document, 'script', 'facebook-jssdk'));
+    $('#table').DataTable();
+    </script>
+
+
 
 	<!-- Your customer chat code -->
 	<div class="fb-customerchat"
@@ -83,18 +88,21 @@
 	</div>
 
 
-	<script src="{{asset('js/app7554.js?id=f9aa11829e116a70774c')}}"></script>
+    <script src="{{ asset('assets/js/app7554.js?id=f9aa11829e116a70774c') }}"></script>
+    <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
 	<!-- script start -->
 
-	<script src="{{asset('js/simplebar.js')}}"></script>
+	<script type="text/javascript" src="{{ asset('assets/js/simplebar.js') }}"></script>
 
-	<script src="{{asset('js/jquery-ui.min.js')}}"></script>
-	<script type="text/javascript" src="{{asset('js/slick.min.js')}}"></script>
+	<script type="text/javascript" src="{{ asset('assets/js/jquery-ui.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('assets/js/slick.min.js') }}"></script>
 
-	<script src="{{asset('js/tippy.all.min.js')}}"></script>
-	<script type="text/javascript" src="{{asset('js/all2ce5.js?id=f9ba99a350c653c9c96e')}"></script>
-	<!-- script end -->
-
+	<script type="text/javascript" src="{{ asset('assets/js/tippy.all.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('assets/js/all2ce5.js') }}"></script>
+    <script type="text/javascript" src="{{asset('//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('//cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/external.js') }}"></script>
+    <!-- script end -->
 
 
 </body>

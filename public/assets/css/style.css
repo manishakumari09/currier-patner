@@ -826,7 +826,7 @@ nav.custome-pagination{
     background-color: rgb(255, 255, 255);
 }
 .bg-send{
-	background-image: url(../icon/delivery-man.png);
+	background-image: url('../../assets/icon/delivery-man.png');
     background-position: 20px 25px;
     background-size: contain;
     background-repeat: no-repeat;
@@ -1640,7 +1640,9 @@ nav.custome-pagination{
 }
 
 
-
+.super-admin .foot{
+    display: none !important;
+}
 
 
 
@@ -1862,3 +1864,46 @@ nav.custome-pagination{
 		padding-top: 3rem !important;
 	}
 }
+.bottom-btn{
+color: inherit;
+background-color: rgba(0,0,0,.03);
+border-top: 1px solid rgba(0,0,0,.125);
+}
+.dist-form .form-label{
+    float: left;
+}
+.dist-form .form-label::after{
+    content: "*";
+    color: red;
+}
+.dist-form select{
+color: #88898a;
+    font-size: 14px;
+}
+.employee-code label{
+    font-size: 12px;
+}
+.employee-code input{
+    height: calc(2.25rem + -6px);
+}
+#table-wrapper {
+    position:relative;
+  }
+  #table-scroll {
+    height:500px;
+    overflow:auto;
+    margin-top:20px;
+  }
+  #table-wrapper table {
+    width:100%;
+
+  }
+
+  #table-wrapper table thead th .text {
+    position:absolute;
+    top:-20px;
+    z-index:2;
+    height:20px;
+    width:35%;
+    border:1px solid red;
+  }

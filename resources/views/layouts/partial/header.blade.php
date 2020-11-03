@@ -2,7 +2,7 @@
     <nav class="navbar fixed-top shadow-sm navbar-expand-lg py-md-0 py-1 bg-white navbar-light-cs">
 				<div class="container">
 					<a class="navbar-brand" href="index.html">
-						<img src="icon/logo.svg" class="img-fluid" alt="Steadfastcourier">
+						<img src="{{asset('assets/icon/logo.svg')}}" class="img-fluid" alt="Steadfastcourier">
 					</a>
 					<div>
 						<a href="login.html" class="btn font-13 btn-log text-seagreen border-lightseagreen-1 mr-4 d-lg-none">Login</a>

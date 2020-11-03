@@ -49,7 +49,7 @@
             <div class="col-12">
                 <div class="row align-items-center">
                     <div class="col-xl-4 col-lg-4 col pl-0">
-                        <a href="#"><img src="icon/logo-w.png" alt="logo"></a>
+                        <a href="#"><img src="{{asset('assets/icon/logo-w.png')}}" alt="logo"></a>
                         <p class="mb-0 pt-2 font-14 text-white">14/1, Dhanmondi 3/A, Dhaka-1209</p>
                         <p class="mb-0 font-14 text-white"><span class="font-medium">E-mail:&nbsp;</span><a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="a4cdcac2cbe4d7d0c1c5c0c2c5d7d0c7cbd1d6cdc1d68ac7cbc9">[email&#160;protected]</a></p>
                         <p class="mb-0 font-14 text-white"><span class="font-medium">Hotline:&nbsp;</span>09678-045045</p>

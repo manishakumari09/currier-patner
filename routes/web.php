@@ -23,5 +23,20 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('register');
 });
+Route::get('/district', function () {
+    return view('district');
+});
+Route::get('/zone', function () {
+    return view('zone');
+});
+Route::get('/pickup', function () {
+    return view('pickup');
+});
+Route::get('/employee', function () {
+    return view('employee');
+});
+Route::get('/super-admin', function () {
+    return view('super_admin');
+});
 // Route::get('home', 'HomeController@index');
-Route::post('/districts', 'DistrictController@show');
+// Route::post('/districts', 'DistrictController@show');
