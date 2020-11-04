@@ -27,7 +27,7 @@
 	    font-weight: 800;
 	}
 	.bg-img {
-	    background-image: url(../icon/bg-wave-img.svg);
+	    background-image: url(../icon/bg-wave-img.png);
 	    background-position: 0px -40px;
 	    background-size: initial;
 	    background-repeat: no-repeat;
@@ -271,7 +271,7 @@
 		height: 35px;
 	}
 	.bg-img {
-	    background-image: url(../icon/bg-wave-img.svg);
+	    background-image: url(../icon/bg-wave-img.png);
 	    background-position: 0px -65px;
 	    background-size: initial;
 	    background-repeat: no-repeat;

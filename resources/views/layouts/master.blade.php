@@ -10,13 +10,13 @@
 
 	<meta property="og:locale" content="en_US" />
 	<meta property="og:type" content="website" />
-	<meta property="og:title" content="Steadfast Courier" />
+	<meta property="og:title" content="Stk It Solution Ltd" />
 	<meta property="og:description" content="Always On Time" />
 	<meta property="og:image" content="icon/website-share.png" />
 	<meta property="og:image:width" content="600" />
 	<meta property="og:image:height" content="315" />
 	<meta name="google-site-verification" content="3rMKM2JKjbtv89s2M-xg_jMz-cXUVR9bepDj8Ip9Xuw" />
-	<title>Steadfast Courier</title>
+	<title>Stk It Solution Ltd</title>
 
 	<link rel="icon" href="icon/fav.png" type="image/gif">
 
@@ -31,7 +31,7 @@
 	<link rel="stylesheet" href="{{asset('assets/css/all8a7b.css?id=b3f2f74720775e520af7')}}">
     <link rel="stylesheet" href="{{asset('//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css')}}">
     <link rel="stylesheet" href="{{asset('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')}}">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css" integrity="sha256-b5ZKCi55IX+24Jqn638cP/q3Nb2nlx+MH/vMMqrId6k=" crossorigin="anonymous" />
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -79,12 +79,11 @@
     </script>
 
 
-
 	<!-- Your customer chat code -->
 	<div class="fb-customerchat"
 	  attribution=setup_tool
 	  page_id="114049202349356"
-		theme_color="#1dc68c">
+		theme_color="#006A4D">
 	</div>
 
 
@@ -93,7 +92,7 @@
 	<!-- script start -->
 
 	<script type="text/javascript" src="{{ asset('assets/js/simplebar.js') }}"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="{{ asset('assets/js/jquery-ui.min.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('assets/js/slick.min.js') }}"></script>
 
@@ -101,9 +100,10 @@
 	<script type="text/javascript" src="{{ asset('assets/js/all2ce5.js') }}"></script>
     <script type="text/javascript" src="{{asset('//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('//cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/external.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('../assets/js/external.js') }}"></script>
     <!-- script end -->
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js" integrity="sha256-5YmaxAwMjIpMrVlK84Y/+NjCpKnFYa8bWWBbUHSBGfU=" crossorigin="anonymous"></script>
 
 </body>
 

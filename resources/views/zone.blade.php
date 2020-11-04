@@ -30,9 +30,15 @@
                                             <input type="text" class="form-control" id="inputAddress">
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="inputAddress" class="form-label">District Name</label>
-                                        <input type="text" class="form-control" id="inputAddress">
+                                    <div class="form-row">
+                                    <div class="form-group  col-md-6">
+                                            <label class="form-label">District</label>
+                                            <select class="form-control">
+                                                <option selected>Choose...</option>
+                                                <option>...</option>
+                                            </select>
+
+                                    </div>
                                     </div>
                                 </div>
                                 <div class="bottom-btn p-3">

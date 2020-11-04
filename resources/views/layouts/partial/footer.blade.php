@@ -49,13 +49,13 @@
             <div class="col-12">
                 <div class="row align-items-center">
                     <div class="col-xl-4 col-lg-4 col pl-0">
-                        <a href="#"><img src="{{asset('assets/icon/logo-w.png')}}" alt="logo"></a>
-                        <p class="mb-0 pt-2 font-14 text-white">14/1, Dhanmondi 3/A, Dhaka-1209</p>
-                        <p class="mb-0 font-14 text-white"><span class="font-medium">E-mail:&nbsp;</span><a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="a4cdcac2cbe4d7d0c1c5c0c2c5d7d0c7cbd1d6cdc1d68ac7cbc9">[email&#160;protected]</a></p>
-                        <p class="mb-0 font-14 text-white"><span class="font-medium">Hotline:&nbsp;</span>09678-045045</p>
+                        <a href="#"><img src="{{asset('assets/icon/logo-new.jpg')}}" alt="logo"></a>
+                        <p class="mb-0 pt-2 font-14 text-white">Level 2,House No 13,Road No 2,Sector 6,Uttara,Dhaka, Bangladesh 1230.</p>
+                        <p class="mb-0 font-14 text-white"><span class="font-medium">E-mail:&nbsp;</span><a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="a4cdcac2cbe4d7d0c1c5c0c2c5d7d0c7cbd1d6cdc1d68ac7cbc9">stkitbd@gmail.com</a></p>
+                        <p class="mb-0 font-14 text-white"><span class="font-medium">Contact us:&nbsp;</span>01701046549</p>
                     </div>
                     <div class="col-xl-4 col-lg-5 col px-0 text-center">
-                        <p class="mb-0 font-14 text-white">&copy; 2016 - 2020 SteadFast Courier.</p>
+                        <p class="mb-0 font-14 text-white">&copy; 2020 Stk It Solution Ltd. All right reserved.</p>
                     </div>
                     <div class="col-xl-4 col-lg-3 col p-0">
                         <ul class="list-style-none p-0 m-0 d-flex justify-content-end social-list">
@@ -223,7 +223,7 @@
                     </div>
                     <div class="col-12 px-0 py-2 text-center">
                         <div class="d-flex align-items-center flex-wrap justify-content-center">
-                            <p class="mb-0 font-13 text-white">&copy; 2016 - 2020 SteadFast Courier.</p>
+                            <p class="mb-0 font-13 text-white">&copy; 2016 - 2020 Stk It Solution Ltd.</p>
                             <p class="mb-0 font-13 text-white">&nbsp;All right reserved.</p>
                         </div>
                     </div>

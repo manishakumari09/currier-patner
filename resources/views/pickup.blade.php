@@ -8,7 +8,7 @@
 
 @section('content')
 
-<section class="row pt-5">
+<section class="row pt-5 form-font">
     <div class="container-fluid pb-3 mt-xl-5 mt-3 px-lg-3 px-md-0">
         <div class="col-12 pt-4">
             <div class="row">

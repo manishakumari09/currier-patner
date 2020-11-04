@@ -18,9 +18,9 @@
                 <div class="col-6 bg-rl">
                     <div class="pt-5 pl-lg-5 pl-4 mt-5">
                         <h4 class="text-white font-regular">Welcome to</h4>
-                        <h4 class="text-white font-regular">Steadfast Courier</h4>
+                        <h4 class="text-white font-regular">Stk It Solution Ltd</h4>
                         <div class="pt-5 mt-4">
-                            <img src="icon/rl-img.png" alt="image" class="img-fluid">
+                            <img src="{{asset('assets/icon/delivery-man-img-reg.png')}}" alt="image" class="img-fluid">
                         </div>
                     </div>
                 </div>

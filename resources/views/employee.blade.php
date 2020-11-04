@@ -8,7 +8,7 @@
 
 @section('content')
 
-<section class="row pt-5">
+<section class="row pt-5 form-font">
     <div class="container-fluid pb-3 mt-xl-5 mt-3 px-lg-3 px-md-0">
         <div class="col-12 pt-4 mb-3">
             <div class="row">
@@ -21,81 +21,118 @@
                             <form>
                                 <div class="p-3">
                                     <div class="form-row">
-                                        <div class="form-group col-md-2 employee-code">
-                                            <label for="inputState" class="form-label">Employee Code</label>
+                                        <div class="form-group col-md-4">
+                                            <label for="inputState" class="form-label required">Employee Code</label>
                                             <input type="text" class="form-control" id="inputAddress">
                                         </div>
-                                    </div>
-                                    <div class="form-row">
                                         <div class="form-group col-md-4">
-                                            <label for="inputState" class="form-label">First Name</label>
+                                            <label for="inputState" class="form-label required">First Name</label>
                                             <input type="text" class="form-control" id="inputAddress">
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label for="inputState" class="form-label">Middle Name</label>
                                             <input type="text" class="form-control" id="inputAddress">
                                         </div>
+
+                                    </div>
+                                    <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                            <label for="inputState" class="form-label required">Last Name</label>
+                                            <input type="text" class="form-control" id="inputAddress">
+                                        </div>
                                         <div class="form-group col-md-4">
-                                            <label for="inputState" class="form-label">Last Name</label>
+                                            <label for="inputState" class="form-label required">Gender</label>
+                                            <select id="inputState" class="form-control">
+                                                <option selected>Choose Gender</option>
+                                                <option>Male</option>
+                                                <option>Female</option>
+                                                <option>Others</option>
+                                                <option>Not to say</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="inputState" class="form-label required">Religion</label>
                                             <input type="text" class="form-control" id="inputAddress">
                                         </div>
+
                                     </div>
                                     <div class="form-row">
-                                        <div class="form-group col-md-3">
-                                            <label for="inputState" class="form-label">Gender</label>
-                                            <input type="text" class="form-control" id="inputAddress">
+                                        <div class="form-group col-md-4">
+                                            <label for="inputState" class="form-label required">Marital Status</label>
+                                            <select id="inputState" class="form-control">
+                                                <option value="">single</option>
+                                                <option>Married</option>
+                                                <option>divorced</option>
+                                                <option>widowed</option>
+                                            </select>
                                         </div>
-                                        <div class="form-group col-md-3">
-                                            <label for="inputState" class="form-label">Religion</label>
-                                            <input type="text" class="form-control" id="inputAddress">
+                                        <div class="form-group col-md-4">
+                                            <label for="inputState" class="form-label required">Date Of Birth</label>
+                                            <input type="date" id="datepicker" class="form-control" id="inputAddress">
                                         </div>
-                                        <div class="form-group col-md-3">
-                                            <label for="inputState" class="form-label">Marital Status</label>
-                                            <input type="text" class="form-control" id="inputAddress">
-                                        </div>
-                                        <div class="form-group col-md-3">
-                                            <label for="inputState" class="form-label">Date Of Birth</label>
-                                            <input type="text" class="form-control" id="inputAddress">
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-3">
+                                        <div class="form-group col-md-4">
                                             <label for="inputState" class="form-label">Email Id</label>
                                             <input type="text" class="form-control" id="inputAddress">
                                         </div>
-                                        <div class="form-group col-md-3">
-                                            <label for="inputState" class="form-label">Phone No</label>
+                                    </div>
+                                    <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                            <label for="inputState" class="form-label required">Phone No</label>
                                             <input type="text" class="form-control" id="inputAddress">
                                         </div>
-                                        <div class="form-group col-md-3">
-                                            <label for="inputState" class="form-label">Address 1</label>
+                                        <div class="form-group col-md-4">
+                                            <label for="inputState" class="form-label required">Address 1</label>
                                             <input type="text" class="form-control" id="inputAddress">
                                         </div>
-                                        <div class="form-group col-md-3">
+                                        <div class="form-group col-md-4">
                                             <label for="inputState" class="form-label">Address 2</label>
                                             <input type="text" class="form-control" id="inputAddress">
                                         </div>
                                     </div>
                                     <div class="form-row">
-                                        <div class="form-group col-md-2">
-                                            <label for="inputState" class="form-label">District Name</label>
-                                            <input type="text" class="form-control" id="inputAddress">
+                                        <div class="form-group col-md-4">
+                                            <label for="inputState" class="form-label required">District</label>
+                                            <select id="inputState" class="form-control">
+                                            <option value="">select district</option>
+                                                <option value="">Bihar</option>
+                                                <option>Jharkhand</option>
+                                                <option>Karnataka</option>
+                                                <option>West Bengal</option>
+                                            </select>
                                         </div>
-                                        <div class="form-group col-md-2">
-                                            <label for="inputState" class="form-label">Zode Name</label>
-                                            <input type="text" class="form-control" id="inputAddress">
+                                        <div class="form-group col-md-4">
+                                            <label for="inputState" class="form-label required">Zone</label>
+                                            <select id="inputState" class="form-control">
+                                            <option value="">select zone</option>
+                                                <option value="">Bokaro</option>
+                                                <option>Ranchi</option>
+                                                <option>Jamshedpur</option>
+                                                <option>Dhanbad</option>
+                                            </select>
                                         </div>
-                                        <div class="form-group col-md-2">
-                                            <label for="inputState" class="form-label">PickUp Point Name</label>
-                                            <input type="text" class="form-control" id="inputAddress">
+                                        <div class="form-group col-md-4">
+                                            <label for="inputState" class="form-label required">Pickup Point</label>
+                                            <select id="inputState" class="form-control">
+                                                <option value="">select pickup point</option>
+                                                <option value="">AAdrash Nagar</option>
+                                                <option>Lalpur</option>
+                                                <option>Sail city</option>
+                                                <option>Sec 5</option>
+                                            </select>
                                         </div>
-                                        <div class="form-group col-md-2">
-                                            <label for="inputState" class="form-label">Date Of Joining</label>
+                                    </div>
+                                    <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                            <label for="inputState" class="form-label required">Date Of Joining</label>
                                             <input type="text" class="form-control" id="inputAddress">
                                         </div>
                                         <div class="form-group col-md-4">
-                                            <label for="inputState" class="form-label">EmployeeType(Pick Up Point Manager/ Delivery Boy)</label>
-                                            <input type="text" class="form-control" id="inputAddress">
+                                            <label for="inputState" class="form-label required">EmployeeType</label>
+                                            <select id="inputState" class="form-control">
+                                                <option value="">select employee type</option>
+                                                <option value="">Pick Up Point Manager</option>
+                                                <option>Delivery Boy</option>
+                                            </select>
                                         </div>
                                     </div>
 
@@ -124,8 +161,8 @@
                                     <table id="table"  class="table table-bordered table-hover dt-responsive">
                                         <thead>
                                         <tr>
-                                            <th>First Name</th>
-                                            <th>Middle Name/th>
+                                            <th class="required">First Name</th>
+                                            <th>Middle Name</th>
                                             <th>Last Name</th>
                                             <th>Gender</th>
                                             <th>Religion</th>

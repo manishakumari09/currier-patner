@@ -2,7 +2,7 @@
     <nav class="navbar fixed-top shadow-sm navbar-expand-lg py-md-0 py-1 bg-white navbar-light-cs">
 				<div class="container">
 					<a class="navbar-brand" href="index.html">
-						<img src="{{asset('assets/icon/logo.svg')}}" class="img-fluid" alt="Steadfastcourier">
+						<img src="{{asset('assets/icon/logo-new.png')}}" class="img-fluid" alt="Steadfastcourier">
 					</a>
 					<div>
 						<a href="login.html" class="btn font-13 btn-log text-seagreen border-lightseagreen-1 mr-4 d-lg-none">Login</a>
@@ -34,7 +34,7 @@
 														<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="25px" height="25px" viewBox="0 0 436.016 436.016" xml:space="preserve">
 															<defs>
 																<linearGradient id="grad-1" x1="0%" y1="0%" x2="0%" y2="100%">
-																	<stop offset="0%" style="stop-color:#1dc68c;stop-opacity:1"></stop>
+																	<stop offset="0%" style="stop-color:#006A4D;stop-opacity:1"></stop>
 																	<stop offset="100%" style="stop-color:#1ca777;stop-opacity:1"></stop>
 																</linearGradient>
 															</defs>
@@ -56,7 +56,7 @@
 														<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="25px" height="25px" viewBox="0 0 490 490" xml:space="preserve">
 															<defs>
 																<linearGradient id="gr-grad1" x1="0%" y1="0%" x2="0%" y2="100%">
-																	<stop offset="0%" style="stop-color:#1dc68c;stop-opacity:1"></stop>
+																	<stop offset="0%" style="stop-color:#006A4D;stop-opacity:1"></stop>
 																	<stop offset="100%" style="stop-color:#1ca777;stop-opacity:1"></stop>
 																</linearGradient>
 															</defs>
@@ -69,7 +69,7 @@
 																	<circle cx="444.697" cy="46.545" r="45.303"></circle>
 																	<path d="M309.05,180.706c3.127-10.258,13.972-16.04,24.235-12.913c0.121,0.034,24.048,6.797,44.012-4.012    c17.35-9.394,28.575-27.506,32.559-33.711c8.06-12.556,19.313-22.588,34.841-22.588c21.072,0,38.149,17.079,38.149,38.147v119.885    c0,13.415-6.923,25.21-17.39,32.012v170.472c0,11.468-9.294,20.761-20.76,20.761c-11.465,0-20.76-9.293-20.76-20.761V297.525    c-10.467-6.802-17.391-18.597-17.391-32.011v-74.35c-3.374,2.426-6.959,4.707-10.76,6.766    c-15.541,8.413-31.75,10.765-45.011,10.765c-16.155,0-27.937-3.489-28.811-3.756C311.708,201.814,305.927,190.964,309.05,180.706z    "></path>
 																</g>
-																<path fill="#1dc68c" d="M249.749,113.173h-36.702c-0.604,0-1.093,0.489-1.093,1.093v20.428c0,1.584-1.289,2.873-2.874,2.873H191.02   c-1.584,0-2.873-1.289-2.873-2.873v-20.428c0-0.604-0.489-1.093-1.093-1.093h-36.703c-8.138,0-14.759,6.621-14.759,14.759v24.693   c0,0.51,0.352,0.951,0.849,1.065c1.915,0.438,4.248,0.652,7.134,0.652c5.222,0,11.063-0.711,15.754-1.279   c1.041-0.126,5.614-0.53,6.797-0.557c13.289-0.294,24.919,9.337,29.322,23.779c5.553,18.239-4.763,37.595-22.995,43.148   c-1.482,0.452-15.007,4.414-33.228,4.414c-0.713,0-1.891-0.022-2.52-0.035c-0.294-0.006-0.577,0.107-0.786,0.313   c-0.21,0.206-0.327,0.487-0.327,0.78v10.513c0,8.139,6.621,14.76,14.759,14.76h99.398c8.139,0,14.76-6.621,14.76-14.76V127.932   C264.509,119.794,257.888,113.173,249.749,113.173z"></path>
+																<path fill="#006A4D" d="M249.749,113.173h-36.702c-0.604,0-1.093,0.489-1.093,1.093v20.428c0,1.584-1.289,2.873-2.874,2.873H191.02   c-1.584,0-2.873-1.289-2.873-2.873v-20.428c0-0.604-0.489-1.093-1.093-1.093h-36.703c-8.138,0-14.759,6.621-14.759,14.759v24.693   c0,0.51,0.352,0.951,0.849,1.065c1.915,0.438,4.248,0.652,7.134,0.652c5.222,0,11.063-0.711,15.754-1.279   c1.041-0.126,5.614-0.53,6.797-0.557c13.289-0.294,24.919,9.337,29.322,23.779c5.553,18.239-4.763,37.595-22.995,43.148   c-1.482,0.452-15.007,4.414-33.228,4.414c-0.713,0-1.891-0.022-2.52-0.035c-0.294-0.006-0.577,0.107-0.786,0.313   c-0.21,0.206-0.327,0.487-0.327,0.78v10.513c0,8.139,6.621,14.76,14.759,14.76h99.398c8.139,0,14.76-6.621,14.76-14.76V127.932   C264.509,119.794,257.888,113.173,249.749,113.173z"></path>
 															</g>
 														</svg>
 													</span>
@@ -84,7 +84,7 @@
 														<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="25px" height="25px" viewBox="0 0 459.419 459.419" xml:space="preserve">
 															<defs>
 																<linearGradient id="gr-grad11" x1="0%" y1="0%" x2="0%" y2="100%">
-																	<stop offset="0%" style="stop-color:#1dc68c;stop-opacity:.8"></stop>
+																	<stop offset="0%" style="stop-color:#006A4D;stop-opacity:.8"></stop>
 																	<stop offset="100%" style="stop-color:#1ca777;stop-opacity:1"></stop>
 																</linearGradient>
 															</defs>
@@ -113,7 +113,7 @@
 														<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="25px" height="25px" viewBox="0 0 612 612" xml:space="preserve">
 															<defs>
 																<linearGradient id="gr-grad21" x1="0%" y1="0%" x2="0%" y2="100%">
-																	<stop offset="0%" style="stop-color:#1dc68c;stop-opacity:.9"></stop>
+																	<stop offset="0%" style="stop-color:#006A4D;stop-opacity:.9"></stop>
 																	<stop offset="100%" style="stop-color:#1ca777;stop-opacity:1"></stop>
 																</linearGradient>
 															</defs>
@@ -139,10 +139,10 @@
 								<a class="nav-link font-sm-14 text-dark" href="contact.html">Contact Us</a>
 							</li>
 														<li class="nav-item mx-lg-3 py-lg-3 py-md-2 py-1">
-								<a class="nav-link font-sm-14 text-dark outline rounded px-3 py-1" href="register.html">Register</a>
+								<a class="nav-link font-sm-14 text-dark outline rounded px-3 py-1" href="register">Register</a>
 							</li>
 							<li class="nav-item mx-lg-3 py-lg-3 py-md-2 py-1">
-								<a class="nav-link font-sm-14 text-white btn bg-color-lightseagreen py-1 px-4" href="login.html">Login</a>
+								<a class="nav-link font-sm-14 text-white btn bg-color-lightseagreen py-1 px-4" href="login">Login</a>
 							</li>
 													</ul>
 
@@ -150,7 +150,7 @@
 						<!-- for tablet and mobile -->
 						<ul class="navbar-nav d-block d-lg-none row">
 							<li class="nav-item border-top active">
-									<a class="nav-link font-sm-14 text-dark px-3" href="register.html" id="mbl-register">Register</a>
+									<a class="nav-link font-sm-14 text-dark px-3" href="register" id="mbl-register">Register</a>
 								</li>
 							<li class="nav-item border-top active">
 								<a class="nav-link font-sm-14 text-dark px-3" href="index.html#mbl-services" id="mbl-gotoservices">Service</a>

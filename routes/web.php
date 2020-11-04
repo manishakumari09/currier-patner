@@ -38,5 +38,8 @@ Route::get('/employee', function () {
 Route::get('/super-admin', function () {
     return view('super_admin');
 });
+Route::get('/admin', function () {
+    return view('admin');
+});
 // Route::get('home', 'HomeController@index');
 // Route::post('/districts', 'DistrictController@show');
