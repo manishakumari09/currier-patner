@@ -32,7 +32,7 @@
                     </div>
                 </div>
                 <div class="col-lg-5 col-md-6 pr-0 bg-send">
-                    <!--  -->
+                    <!--  --><img src="{{asset('assets/icon/delivery-man-img-vertical.png')}}">
                 </div>
             </div>
         </div>
