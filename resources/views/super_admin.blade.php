@@ -18,10 +18,7 @@
                 <div class="col-lg-12 login-form">
                     <div class="col-lg-12 login-form">
                         <form>
-                            <div class="form-group">
-                                <label class="form-control-label">Name</label>
-                                <input type="text" class="form-control">
-                            </div>
+                            
                             <div class="form-group">
                                 <label class="form-control-label">Email</label>
                                 <input type="email" class="form-control">

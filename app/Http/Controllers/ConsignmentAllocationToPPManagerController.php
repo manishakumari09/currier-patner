@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ZoneController extends Controller
+class ConsignmentAllocationToPPManagerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class ZoneController extends Controller
      */
     public function store(Request $request)
     {
-        return $return->input();
+        //
     }
 
     /**

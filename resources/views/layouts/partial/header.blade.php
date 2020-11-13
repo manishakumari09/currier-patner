@@ -1,7 +1,7 @@
 	<!-- top menu -->
     <nav class="navbar fixed-top shadow-sm navbar-expand-lg py-md-0 py-1 bg-white navbar-light-cs">
 				<div class="container">
-					<a class="navbar-brand" href="index.html">
+					<a class="navbar-brand" href="index.php">
 						<img src="{{asset('assets/icon/logo-new.png')}}" class="img-fluid" alt="Steadfastcourier">
 					</a>
 					<div>
@@ -14,7 +14,7 @@
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<!-- for desktop only -->
 						<ul class="navbar-nav ml-auto d-none d-lg-flex">
-								<li class="nav-item mr-lg-4 py-lg-3 py-md-2 py-1 drop-menu position-relative active">
+								<!-- <li class="nav-item mr-lg-4 py-lg-3 py-md-2 py-1 drop-menu position-relative active">
 									<a class="nav-link font-sm-14 text-dark"href="index.html#services" id="gotoservices">
 										Services
 										<span>
@@ -127,16 +127,21 @@
 											</a>
 										</div>
 									</div>
-								</li>
-
-							<li class="nav-item mx-lg-3 py-lg-3 py-md-2 py-1">
+								</li> -->
+                                <li class="nav-item mx-lg-3 py-lg-3 py-md-2 py-1">
+								    <a class="nav-link font-sm-14 text-dark" href="" id="gotoservicearea">Home</a>
+							    </li>
+                                <li class="nav-item mx-lg-3 py-lg-3 py-md-2 py-1">
+								    <a class="nav-link font-sm-14 text-dark" href="" id="gotoservicearea">About Us</a>
+							    </li>
+							<!-- <li class="nav-item mx-lg-3 py-lg-3 py-md-2 py-1">
 								<a class="nav-link font-sm-14 text-dark" href="coverage-area.html" id="gotoservicearea">Service area</a>
+							</li> -->
+							<li class="nav-item mx-lg-3 py-lg-3 py-md-2 py-1">
+								<a class="nav-link font-sm-14 text-dark" href="" id="gotopricing">Pricing</a>
 							</li>
 							<li class="nav-item mx-lg-3 py-lg-3 py-md-2 py-1">
-								<a class="nav-link font-sm-14 text-dark" href="index.html#pricing" id="gotopricing">Pricing</a>
-							</li>
-							<li class="nav-item mx-lg-3 py-lg-3 py-md-2 py-1">
-								<a class="nav-link font-sm-14 text-dark" href="contact.html">Contact Us</a>
+								<a class="nav-link font-sm-14 text-dark" href="">Contact Us</a>
 							</li>
 														<li class="nav-item mx-lg-3 py-lg-3 py-md-2 py-1">
 								<a class="nav-link font-sm-14 text-dark outline rounded px-3 py-1" href="register">Register</a>

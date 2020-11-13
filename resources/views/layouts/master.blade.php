@@ -78,6 +78,17 @@
     $('#table').DataTable();
     </script>
 
+    <script>
+    function toggle(source) {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i] != source)
+            checkboxes[i].checked = source.checked;
+    }
+}
+
+    </script>
+
 
 	<!-- Your customer chat code -->
 	<div class="fb-customerchat"
@@ -90,9 +101,9 @@
     <script src="{{ asset('assets/js/app7554.js?id=f9aa11829e116a70774c') }}"></script>
     <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
 	<!-- script start -->
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script type="text/javascript" src="{{ asset('assets/js/simplebar.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script> -->
 	<script type="text/javascript" src="{{ asset('assets/js/jquery-ui.min.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('assets/js/slick.min.js') }}"></script>
 
@@ -100,7 +111,7 @@
 	<script type="text/javascript" src="{{ asset('assets/js/all2ce5.js') }}"></script>
     <script type="text/javascript" src="{{asset('//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('//cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('../assets/js/external.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/external.js') }}"></script>
     <!-- script end -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js" integrity="sha256-5YmaxAwMjIpMrVlK84Y/+NjCpKnFYa8bWWBbUHSBGfU=" crossorigin="anonymous"></script>
