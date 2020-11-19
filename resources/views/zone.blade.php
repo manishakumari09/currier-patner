@@ -36,7 +36,8 @@
                                             <label class="form-label">District</label>
                                             <select class="form-control" name="DistrictId">
                                                 <option selected>Choose...</option>
-                                                <option>...</option>
+                                                <option>Ranchi</option>
+                                                <option>Bokaro</option>
                                             </select>
 
                                     </div>
@@ -63,19 +64,23 @@
                                 <th>Zone Name</th>
                                 <th>PinCode</th>
                                 <th>District</th>
+                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
+
                             @foreach($zone as $zone)
+                            <tr>
                                     <td>{{$zone->ZoneName}}</td>
                                     <td>{{$zone->PinCode}}</td>
                                     <td>{{$zone->DistrictId}}</td>
-                                @endforeach
-                                <td><i class="fa fa-pencil mr-2" aria-hidden="true"></i>
+                                    <td><i class="fa fa-pencil mr-2" aria-hidden="true"></i>
                                     <i class="fa fa-trash-o" aria-hidden="true"></i>
                                 </td>
-                            </tr>
+                                </tr>
+                                @endforeach
+
+
                             </tbody>
                         </table>
                         </div>

@@ -12,8 +12,8 @@
 
 <!-- registration -->
 <section class="row pt-5">
-    <div class="container pt-5 pb-3 mt-xl-5 mt-3 px-lg-3 px-md-0">
-        <div class="col-12 pt-4 px-xl-5 px-4">
+    <div class="container pt-5 pb-3 mt-xl-5 mt-3">
+        <div class="col-12 pt-4">
             <div class="row mx-xl-4 rl-panel">
                 <div class="col-6 bg-rl">
                     <div class="pt-5 pl-lg-5 pl-4 mt-5">
@@ -25,7 +25,7 @@
                     </div>
                 </div>
                 <div class="col-6 pr-md-0 pr-lg-3">
-                    <div class="px-lg-5 px-md-0 py-5 my-3">
+                    <div class="px-md-0 py-5 my-3">
                         <div class="w-100 register-panel">
                             <div class="pb-4 px-3">
                                 <h3 class="text-left text-color-13 font-h-md-23 font-regular">Become a Merchant</h3>
@@ -43,6 +43,12 @@
                                     <div class="col pr-2 mb-4">
                                           <div class="form-group mb-0">
                                             <input type="text" name="f_name" value=""  class="form-control px-3 h-auto bg-transparent" placeholder="First Name" required>
+                                        </div>
+                                                                                </div>
+
+                                                                                <div class="col pl-2 mb-4">
+                                        <div class="form-group mb-0">
+                                            <input type="text" name="M_name" value="" class="form-control px-3 h-auto bg-transparent" placeholder="Middle Name" required>
                                         </div>
                                                                                 </div>
                                     <div class="col pl-2 mb-4">
@@ -147,6 +153,19 @@
                             <textarea class="form-control px-3 h-auto bg-transparent" rows="2" name="address" placeholder="Address of your Pick up Location" required></textarea>
                         </div>
                                                 </div>
+
+
+                    <div class="row">
+                    <div class="col-sm-2">
+                    <div class="form-group">
+                        <input type="text" placeholder="ghjkl">
+                    </div>
+                    </div>
+                    </div>
+
+
+
+
                     <div class="mb-4">
                         <div class="form-group mb-0">
                             <input type="text" name="phone" value="" class="form-control font-14 px-3 h-auto bg-transparent" placeholder="Phone Number" required>
