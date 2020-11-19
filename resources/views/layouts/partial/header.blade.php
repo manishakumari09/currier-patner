@@ -1,4 +1,5 @@
-	<!-- top menu -->
+
+    <!-- top menu -->
     <nav class="navbar fixed-top shadow-sm navbar-expand-lg py-md-0 py-1 bg-white navbar-light-cs">
 				<div class="container">
 					<a class="navbar-brand" href="index.php">
@@ -13,7 +14,8 @@
 
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<!-- for desktop only -->
-						<ul class="navbar-nav ml-auto d-none d-lg-flex">
+						<ul class="navbar-nav ml-auto d-none d-lg-flex dropdown">
+
 								<!-- <li class="nav-item mr-lg-4 py-lg-3 py-md-2 py-1 drop-menu position-relative active">
 									<a class="nav-link font-sm-14 text-dark"href="index.html#services" id="gotoservices">
 										Services
@@ -142,7 +144,24 @@
 							</li>
 							<li class="nav-item mx-lg-3 py-lg-3 py-md-2 py-1">
 								<a class="nav-link font-sm-14 text-dark" href="">Contact Us</a>
-							</li>
+                            </li>
+                            <li class="nav-item dropdown mx-lg-3 py-lg-3 py-md-2 py-1">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Master
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                    <a class="dropdown-item" href="zone">Zone</a>
+                                    <a class="dropdown-item" href="consignment-entry">Consigment Entry</a>
+                                    <a class="dropdown-item" href="consignment-allocation-to-delivery-boy">Consignment Allocation To Delivery Boy</a>
+                                    <a class="dropdown-item" href="consignment-allocation-to-pp-manager">Consignment Allocation To PP Manager</a>
+                                    <a class="dropdown-item" href="consignment-received-by-delivery-boy">Consignment Received By Delivery Boy</a>
+                                    <a class="dropdown-item" href="consignment-receiver">Consignment Receiver</a>
+                                    <a class="dropdown-item" href="district">District</a>
+                                    <a class="dropdown-item" href="employee">Employee</a>
+                                    <a class="dropdown-item" href="pickup">Pickup</a>
+                                    <a class="dropdown-item" href="admin">Admin</a>
+                                </div>
+                            </li>
 														<li class="nav-item mx-lg-3 py-lg-3 py-md-2 py-1">
 								<a class="nav-link font-sm-14 text-dark outline rounded px-3 py-1" href="register">Register</a>
 							</li>

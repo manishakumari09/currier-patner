@@ -18,8 +18,8 @@
                             <b>Zone</b> Form
                         </div>
                         <div class="card-body p-0">
-                            <form method="post" name="zone" action="zone_submit">
-                            @csrf
+                            <form method="post" action="{{route('zone.store')}}">
+                                @csrf
                                 <div class="p-3">
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
@@ -43,7 +43,7 @@
                                     </div>
                                 </div>
                                 <div class="bottom-btn p-3">
-                                    <button type="button" type="submit" name="submit" class="btn btn-info btn-sm pl-4 pr-4">Submit</button>
+                                    <button type="submit" name="submit" class="btn btn-info btn-sm pl-4 pr-4">Submit</button>
                                     <button type="button" class="btn btn-danger btn-sm pl-4 pr-4">Reset</button>
                                 </div>
 
@@ -60,71 +60,18 @@
                         <table id="table"  class="table table-bordered table-hover dt-responsive">
                             <thead>
                             <tr>
-                                <th>Country</th>
-                                <th>State</th>
                                 <th>Zone Name</th>
-                                <th>Pincode</th>
-                                <th>District Name</th>
-                                <th>Action</th>
+                                <th>PinCode</th>
+                                <th>District</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
-                                <td>India</td>
-                                <td>New Delhi</td>
-                                <td>vihar</td>
-                                <td>985487</td>
-                                <td>Sita Vihar</td>
-                                <td><i class="fa fa-pencil mr-2" aria-hidden="true"></i>
-                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>India</td>
-                                <td>Haryana</td>
-                                <td>vihar</td>
-                                <td>985487</td>
-                                <td>Sita Vihar</td>
-                                <td><i class="fa fa-pencil mr-2" aria-hidden="true"></i>
-                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>India</td>
-                                <td>Maharastra</td>
-                                <td>vihar</td>
-                                <td>985487</td>
-                                <td>Sita Vihar</td>
-                                <td><i class="fa fa-pencil mr-2" aria-hidden="true"></i>
-                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>India</td>
-                                <td>Gurgaon</td>
-                                <td>vihar</td>
-                                <td>985487</td>
-                                <td>Sita Vihar</td>
-                                <td><i class="fa fa-pencil mr-2" aria-hidden="true"></i>
-                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>India</td>
-                                <td>Cuttack</td>
-                                <td>vihar</td>
-                                <td>985487</td>
-                                <td>Sita Vihar</td>
-                                <td><i class="fa fa-pencil mr-2" aria-hidden="true"></i>
-                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>India</td>
-                                <td>Banka</td>
-                                <td>vihar</td>
-                                <td>985487</td>
-                                <td>Sita Vihar</td>
+                            @foreach($zones as $zone)
+                                    <td>{{$zone->ZoneName}}</td>
+                                    <td>{{$zone->PinCode}}</td>
+                                    <td>{{$zone->DistrictId}}</td>
+                                @endforeach
                                 <td><i class="fa fa-pencil mr-2" aria-hidden="true"></i>
                                     <i class="fa fa-trash-o" aria-hidden="true"></i>
                                 </td>

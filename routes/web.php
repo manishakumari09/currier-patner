@@ -26,9 +26,9 @@ Route::get('/register', function () {
 Route::get('/district', function () {
     return view('district');
 });
-Route::get('/zone', function () {
-    return view('zone');
-});
+// Route::get('/zone', function () {
+//     return view('zone');
+// });
 Route::post('zone_submit','ZoneController@store');
 Route::get('/pickup', function () {
     return view('pickup');
@@ -57,6 +57,8 @@ Route::get('/consignment-allocation-to-delivery-boy', function () {
 Route::get('/consignment-received-by-delivery-boy', function () {
     return view('ConsignmentReceivedByDeliveryBoy');
 });
-
+Route::get('/', 'ZoneController@allList');
+Route::get('/zone', 'ZoneController@zone');
+Route::post('/zone', 'ZoneController@store')->name('zone.store');
 // Route::get('home', 'HomeController@index');
 // Route::post('/districts', 'DistrictController@show');

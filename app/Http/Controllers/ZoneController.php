@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Zone;
 class ZoneController extends Controller
 {
     /**
@@ -13,7 +13,7 @@ class ZoneController extends Controller
      */
     public function index()
     {
-        //
+        return view('zone');
     }
 
     /**
@@ -34,7 +34,12 @@ class ZoneController extends Controller
      */
     public function store(Request $request)
     {
-        return $return->input();
+        $zone = new Zone();
+        $zone->ZoneName = $request->ZoneName;
+        $zone->PinCode = $request->PinCode;
+        $zone->DistrictId = $request->DistrictId;
+        $zone->save();
+        return redirect()->back();
     }
 
     /**
@@ -80,5 +85,10 @@ class ZoneController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function allList()
+    {
+        return view('zone')->with('zones', Zone::all());
     }
 }
