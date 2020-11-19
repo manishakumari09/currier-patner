@@ -89,6 +89,6 @@ class ZoneController extends Controller
 
     public function allList()
     {
-        return view('zone')->with('zones', Zone::all());
+        return view('zone')->with('zone', Zone::all());
     }
 }

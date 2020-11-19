@@ -67,7 +67,7 @@
                             </thead>
                             <tbody>
                             <tr>
-                            @foreach($zones as $zone)
+                            @foreach($zone as $zone)
                                     <td>{{$zone->ZoneName}}</td>
                                     <td>{{$zone->PinCode}}</td>
                                     <td>{{$zone->DistrictId}}</td>
