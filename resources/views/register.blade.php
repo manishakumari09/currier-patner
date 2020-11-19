@@ -155,15 +155,6 @@
                                                 </div>
 
 
-                    <div class="row">
-                    <div class="col-sm-2">
-                    <div class="form-group">
-                        <input type="text" placeholder="ghjkl">
-                    </div>
-                    </div>
-                    </div>
-
-
 
 
                     <div class="mb-4">

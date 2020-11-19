@@ -13,7 +13,7 @@ class CreateZoneTable extends Migration
      */
     public function up()
     {
-        Schema::create('zone', function (Blueprint $table) {
+        Schema::create('zones', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('ZoneName');
             $table->string('PinCode');

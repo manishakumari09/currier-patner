@@ -58,7 +58,7 @@ Route::get('/consignment-received-by-delivery-boy', function () {
     return view('ConsignmentReceivedByDeliveryBoy');
 });
 Route::get('/', 'ZoneController@allList');
-Route::get('/zone', 'ZoneController@zone');
+Route::get('/zone', 'ZoneController@zones');
 Route::post('/zone', 'ZoneController@store')->name('zone.store');
 // Route::get('home', 'HomeController@index');
 // Route::post('/districts', 'DistrictController@show');
