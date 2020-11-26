@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\District;
 use Illuminate\Http\Request;
 
 class DistrictController extends Controller
@@ -34,27 +35,34 @@ class DistrictController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dis=new District;
+        $dis->Country=$request->input('Country');
+        $dis->District=$request->input('District');
+        $dis->State=$request->input('State');
+        $dis->save();
+
+        $request->session()->flash('msg','Data submitted');
+        return redirect('district');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\District  $district
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(District $district)
     {
-        //
+        return view('district')->with('districtArr',District::all());
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\District  $district
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(District $district)
     {
         //
     }
@@ -63,10 +71,10 @@ class DistrictController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\District  $district
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, District $district)
     {
         //
     }
@@ -74,10 +82,10 @@ class DistrictController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\District  $district
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(District $district)
     {
         //
     }

@@ -20,6 +20,7 @@
                         <div class="card-body p-0">
                             <form>
                                 <div class="p-3">
+                                <div class="p-3">
                                     <div class="form-row">
                                         <div class="form-group col-md-4">
                                             <label for="inputState" class="form-label required">Employee Code</label>
@@ -76,6 +77,10 @@
                                         </div>
                                     </div>
                                     <div class="form-row">
+                                     <div class="form-group col-md-4">
+                                            <label for="inputState" class="form-label">Password</label>
+                                            <input type="password" class="form-control" id="inputAddress">
+                                        </div>
                                     <div class="form-group col-md-4">
                                             <label for="inputState" class="form-label required">Phone No</label>
                                             <input type="text" class="form-control" id="inputAddress">
@@ -84,12 +89,13 @@
                                             <label for="inputState" class="form-label required">Address 1</label>
                                             <input type="text" class="form-control" id="inputAddress">
                                         </div>
-                                        <div class="form-group col-md-4">
+
+                                    </div>
+                                    <div class="form-row">
+                                    <div class="form-group col-md-4">
                                             <label for="inputState" class="form-label">Address 2</label>
                                             <input type="text" class="form-control" id="inputAddress">
                                         </div>
-                                    </div>
-                                    <div class="form-row">
                                         <div class="form-group col-md-4">
                                             <label for="inputState" class="form-label required">District</label>
                                             <select id="inputState" class="form-control">
@@ -110,7 +116,10 @@
                                                 <option>Dhanbad</option>
                                             </select>
                                         </div>
-                                        <div class="form-group col-md-4">
+
+                                    </div>
+                                    <div class="form-row">
+                                    <div class="form-group col-md-4">
                                             <label for="inputState" class="form-label required">Pickup Point</label>
                                             <select id="inputState" class="form-control">
                                                 <option value="">select pickup point</option>
@@ -120,8 +129,6 @@
                                                 <option>Sec 5</option>
                                             </select>
                                         </div>
-                                    </div>
-                                    <div class="form-row">
                                     <div class="form-group col-md-4">
                                             <label for="inputState" class="form-label required">Date Of Joining</label>
                                             <input type="text" class="form-control" id="inputAddress">
@@ -135,6 +142,8 @@
                                             </select>
                                         </div>
                                     </div>
+
+                                </div>
 
                                 </div>
                                 <div class="bottom-btn p-3">

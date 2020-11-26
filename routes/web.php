@@ -16,20 +16,23 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
-
-Route::get('/login', function () {
-    return view('login');
-});
-Route::get('/register', function () {
-    return view('register');
-});
+// Route::get('/wel', function () {
+//     return view('welcome');
+// });
+// Route::get('/login', function () {
+//     return view('login');
+// });
+// Route::get('/register', function () {
+//     return view('register');
+// });
 Route::get('/district', function () {
     return view('district');
 });
-// Route::get('/zone', function () {
-//     return view('zone');
-// });
-Route::post('zone_submit','ZoneController@store');
+Route::get('/zone', function () {
+    return view('zone');
+});
+// Route::post('zone_submit','ZoneController@store');
+
 Route::get('/pickup', function () {
     return view('pickup');
 });
@@ -57,8 +60,44 @@ Route::get('/consignment-allocation-to-delivery-boy', function () {
 Route::get('/consignment-received-by-delivery-boy', function () {
     return view('ConsignmentReceivedByDeliveryBoy');
 });
-Route::get('/', 'ZoneController@allList');
-Route::get('/zone', 'ZoneController@zones');
-Route::post('/zone', 'ZoneController@store')->name('zone.store');
-// Route::get('home', 'HomeController@index');
-// Route::post('/districts', 'DistrictController@show');
+// Route::get('/zone', 'ZoneController@allList');
+// Route::get('/zone', 'ZoneController@zones');
+// Route::post('/zone', 'ZoneController@store')->name('zone.store');
+
+
+Route::get('/merchant-login', function () {
+    return view('MerchantLogin');
+});
+Route::get('/merchant-register', function () {
+    return view('MerchantRegister');
+});
+// Route::get('/merchantregister_create', 'MerchantRegisterController@create');
+// Route::get('merchantregister_submit', 'MerchantRegisterController@store');
+Route::get('/merchantregister_create', 'MerchantRegisterController@index');
+Route::post('/merchantregister_create', 'MerchantRegisterController@store')->name('merchantregister.store');
+
+
+// Route::get('login', [ 'as' => 'login', 'uses' => 'Auth\LoginController@do']);
+
+
+Route::get('login', 'Auth\LoginController@login')->name('login');
+
+Route::get('/district', 'DistrictController@show');
+Route::post('/district_submit', 'DistrictController@store');
+
+/**
+ * Developer by Ajeet Yadav
+ */
+Route::get('/merchant-login', 'MerchantLoginController@index');
+Route::post('/merchant-login/check-login', 'MerchantLoginController@checkLogin');
+Route::get('/merchant-login/success-login', 'MerchantLoginController@successLogin');
+//check weather the user is logged in or not
+//Route::get('merchant-login/success-login/', function () {
+//    if (!session()->has('merchant')) {
+//        return redirect('/merchant-login');
+//    } else {
+//        return redirect('/merchant-login/success-login');
+//    }
+//});
+Route::get('/merchant-login/logout', 'MerchantLoginController@logout');
+

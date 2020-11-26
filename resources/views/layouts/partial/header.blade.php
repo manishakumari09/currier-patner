@@ -6,7 +6,7 @@
 						<img src="{{asset('assets/icon/logo-new.png')}}" class="img-fluid" alt="Steadfastcourier">
 					</a>
 					<div>
-						<a href="login.html" class="btn font-13 btn-log text-seagreen border-lightseagreen-1 mr-4 d-lg-none">Login</a>
+						<a href="merchant-login" class="btn font-13 btn-log text-seagreen border-lightseagreen-1 mr-4 d-lg-none">Login</a>
 						<button class="navbar-toggler without-focus border-0 px-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 							<span class="navbar-toggler-icon"></span>
 						</button>
@@ -150,23 +150,24 @@
                                 Master
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="district">District</a>
                                     <a class="dropdown-item" href="zone">Zone</a>
                                     <a class="dropdown-item" href="consignment-entry">Consigment Entry</a>
                                     <a class="dropdown-item" href="consignment-allocation-to-delivery-boy">Consignment Allocation To Delivery Boy</a>
                                     <a class="dropdown-item" href="consignment-allocation-to-pp-manager">Consignment Allocation To PP Manager</a>
                                     <a class="dropdown-item" href="consignment-received-by-delivery-boy">Consignment Received By Delivery Boy</a>
                                     <a class="dropdown-item" href="consignment-receiver">Consignment Receiver</a>
-                                    <a class="dropdown-item" href="district">District</a>
+
                                     <a class="dropdown-item" href="employee">Employee</a>
                                     <a class="dropdown-item" href="pickup">Pickup</a>
                                     <a class="dropdown-item" href="admin">Admin</a>
                                 </div>
                             </li>
 														<li class="nav-item mx-lg-3 py-lg-3 py-md-2 py-1">
-								<a class="nav-link font-sm-14 text-dark outline rounded px-3 py-1" href="register">Register</a>
+								<a class="nav-link font-sm-14 text-dark outline rounded px-3 py-1" href="merchant-register">Register</a>
 							</li>
 							<li class="nav-item mx-lg-3 py-lg-3 py-md-2 py-1">
-								<a class="nav-link font-sm-14 text-white btn bg-color-lightseagreen py-1 px-4" href="login">Login</a>
+								<a class="nav-link font-sm-14 text-white btn bg-color-lightseagreen py-1 px-4" href="merchant-login">Login</a>
 							</li>
 													</ul>
 
@@ -174,7 +175,7 @@
 						<!-- for tablet and mobile -->
 						<ul class="navbar-nav d-block d-lg-none row">
 							<li class="nav-item border-top active">
-									<a class="nav-link font-sm-14 text-dark px-3" href="register" id="mbl-register">Register</a>
+									<a class="nav-link font-sm-14 text-dark px-3" href="merchant-register" id="mbl-register">Register</a>
 								</li>
 							<li class="nav-item border-top active">
 								<a class="nav-link font-sm-14 text-dark px-3" href="index.html#mbl-services" id="mbl-gotoservices">Service</a>

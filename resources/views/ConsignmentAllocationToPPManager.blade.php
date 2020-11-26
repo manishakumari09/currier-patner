@@ -45,7 +45,7 @@
                                     <option value="">Mohit</option>
                                     <option value="">Deep</option>
                                 </select></td>
-                                <td><input type="text"></td>
+                                <td>40</td>
                                 <td><textarea name="" id="" cols="15" rows="1" disabled>90</textarea></td>
                             </tr>
                             <tr>
@@ -60,7 +60,7 @@
                                     <option value="">Mohit</option>
                                     <option value="">Deep</option>
                                 </select></td>
-                                <td><input type="text"></td>
+                                <td>40</td>
                                 <td><textarea name="" id="" cols="15" rows="1" disabled>90</textarea></td>
                             </tr>
                             <tr>
@@ -75,7 +75,7 @@
                                     <option value="">Mohit</option>
                                     <option value="">Deep</option>
                                 </select></td>
-                                <td><input type="text"></td>
+                                <td>40</td>
                                 <td><textarea name="" id="" cols="15" rows="1" disabled>90</textarea></td>
                             </tr>
                             <tr>
@@ -90,7 +90,7 @@
                                     <option value="">Mohit</option>
                                     <option value="">Deep</option>
                                 </select></td>
-                                <td><input type="text"></td>
+                                <td>40</td>
                                 <td><textarea name="" id="" cols="15" rows="1" disabled>90</textarea></td>
                             </tr>
 

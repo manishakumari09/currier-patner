@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\zone;
 use Illuminate\Http\Request;
-use App\Zone;
+
 class ZoneController extends Controller
 {
     /**
@@ -13,7 +14,7 @@ class ZoneController extends Controller
      */
     public function index()
     {
-        return view('zone');
+        //
     }
 
     /**
@@ -34,21 +35,16 @@ class ZoneController extends Controller
      */
     public function store(Request $request)
     {
-        $zone = new Zone();
-        $zone->ZoneName = $request->ZoneName;
-        $zone->PinCode = $request->PinCode;
-        $zone->DistrictId = $request->DistrictId;
-        $zone->save();
-        return redirect()->back();
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\zone  $zone
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(zone $zone)
     {
         //
     }
@@ -56,10 +52,10 @@ class ZoneController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\zone  $zone
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(zone $zone)
     {
         //
     }
@@ -68,10 +64,10 @@ class ZoneController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\zone  $zone
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, zone $zone)
     {
         //
     }
@@ -79,16 +75,11 @@ class ZoneController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\zone  $zone
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(zone $zone)
     {
         //
-    }
-
-    public function allList()
-    {
-        return view('zone')->with('zone', Zone::all());
     }
 }
