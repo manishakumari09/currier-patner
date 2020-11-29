@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Haruncpi\LaravelIdGenerator\IdGenerator;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,7 +37,9 @@ Route::get('/pickup', function () {
     return view('pickup');
 });
 Route::get('/employee', function () {
-    return view('employee');
+    $employeeCode = IdGenerator::generate(['table' => 'employees', 'field' =>'employeeCode', 'length' => 10, 'prefix' =>'EMP-']);
+//    $employeeCode = IdGenerator::generate(['table' => 'employees','field' => 'id', 'length' => 10, 'prefix' =>'EMP-']);
+    return view('employee',['employeeCode'=>$employeeCode]);
 });
 Route::get('/super-admin', function () {
     return view('super_admin');
@@ -100,4 +102,8 @@ Route::get('/merchant-login/success-login', 'MerchantLoginController@successLogi
 //    }
 //});
 Route::get('/merchant-login/logout', 'MerchantLoginController@logout');
+
+# Employee Section #
+Route::post('/employee-registration', 'EmployeeController@store')->name('employee-register.store');
+
 

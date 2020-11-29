@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\MerchantRegister;
 use Illuminate\Http\Request;
+use DB;
+
+//for encrypting of password
+use Illuminate\Support\Facades\Crypt;
 
 class MerchantRegisterController extends Controller
 {
@@ -30,7 +34,7 @@ class MerchantRegisterController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -48,13 +52,24 @@ class MerchantRegisterController extends Controller
         $mregister->password = $request->password;
         $mregister->password_confirmation = $request->password_confirmation;
         $mregister->save();
+        //code for insert data in the user table
+        $name = $request->input('f_name');
+        $email = $request->input("email");
+//        for password encryption
+//        $password = Crypt::encrypt($request->input('password'));
+        $password = $request->input('password');
+        $role = "ROLE_MERCHANT";
+        $insertQuery = DB::insert("insert into user_login (name,email,password,role) values (?,?,?,?)", [$name, $email, $password, $role]);
+        if ($insertQuery) {
+            return redirect()->back()->with('message', 'Registration Successful..!!');
+        }
         return redirect()->back()->with('message', 'Registration Successful..!!');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\MerchantRegister  $merchantRegister
+     * @param \App\MerchantRegister $merchantRegister
      * @return \Illuminate\Http\Response
      */
     public function show(MerchantRegister $merchantRegister)
@@ -65,7 +80,7 @@ class MerchantRegisterController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\MerchantRegister  $merchantRegister
+     * @param \App\MerchantRegister $merchantRegister
      * @return \Illuminate\Http\Response
      */
     public function edit(MerchantRegister $merchantRegister)
@@ -76,8 +91,8 @@ class MerchantRegisterController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\MerchantRegister  $merchantRegister
+     * @param \Illuminate\Http\Request $request
+     * @param \App\MerchantRegister $merchantRegister
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, MerchantRegister $merchantRegister)
@@ -88,7 +103,7 @@ class MerchantRegisterController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\MerchantRegister  $merchantRegister
+     * @param \App\MerchantRegister $merchantRegister
      * @return \Illuminate\Http\Response
      */
     public function destroy(MerchantRegister $merchantRegister)
