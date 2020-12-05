@@ -1,7 +1,8 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
-use Haruncpi\LaravelIdGenerator\IdGenerator;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,20 +37,14 @@ Route::get('/zone', function () {
 Route::get('/pickup', function () {
     return view('pickup');
 });
-Route::get('/employee', function () {
-    $employeeCode = IdGenerator::generate(['table' => 'employees', 'field' =>'employeeCode', 'length' => 10, 'prefix' =>'EMP-']);
-//    $employeeCode = IdGenerator::generate(['table' => 'employees','field' => 'id', 'length' => 10, 'prefix' =>'EMP-']);
-    return view('employee',['employeeCode'=>$employeeCode]);
-});
+
 Route::get('/super-admin', function () {
     return view('super_admin');
 });
 Route::get('/admin', function () {
     return view('admin');
 });
-Route::get('/consignment-entry', function () {
-    return view('ConsigmentEntry');
-});
+
 Route::get('/consignment-allocation-to-pp-manager', function () {
     return view('ConsignmentAllocationToPPManager');
 });
@@ -66,13 +61,11 @@ Route::get('/consignment-received-by-delivery-boy', function () {
 // Route::get('/zone', 'ZoneController@zones');
 // Route::post('/zone', 'ZoneController@store')->name('zone.store');
 
-
+##  Merchant ##
 Route::get('/merchant-login', function () {
     return view('MerchantLogin');
 });
-Route::get('/merchant-register', function () {
-    return view('MerchantRegister');
-});
+Route::get("/merchant-register", "MerchantRegisterController@index");
 // Route::get('/merchantregister_create', 'MerchantRegisterController@create');
 // Route::get('merchantregister_submit', 'MerchantRegisterController@store');
 Route::get('/merchantregister_create', 'MerchantRegisterController@index');
@@ -104,6 +97,17 @@ Route::get('/merchant-login/success-login', 'MerchantLoginController@successLogi
 Route::get('/merchant-login/logout', 'MerchantLoginController@logout');
 
 # Employee Section #
+//Route::get('/employee', function () {
+//    $zones = Zone::all();
+//    $employeeCode = IdGenerator::generate(['table' => 'employees', 'field' => 'employeeCode', 'length' => 10, 'prefix' => 'EMP-']);
+//    return view('employee', ['employeeCode' => $employeeCode], compact('zones'));
+//});
+
+Route::get("/employee",'EmployeeController@index');
 Route::post('/employee-registration', 'EmployeeController@store')->name('employee-register.store');
+
+#consignment Section #
+Route::get('/consignment-entry', 'ConsignmentController@index');
+Route::post('/create-consignment', 'ConsignmentController@store')->name('create-consignment.store');
 
 

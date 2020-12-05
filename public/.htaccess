@@ -4,6 +4,12 @@
     </IfModule>
 
     RewriteEngine On
+    #code for protecting env file from public access
+    <files .env>
+        order allow,deny
+        deny from all
+    </files>
+    #end of code for protecting env file from public access
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .

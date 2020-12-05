@@ -58,7 +58,8 @@
                                                 <div class="form-group col-md-4">
                                                     <label for="lName" class="form-label required">Last
                                                         Name</label>
-                                                    <input type="text" class="form-control" name="lName" id="lName" required>
+                                                    <input type="text" class="form-control" name="lName" id="lName"
+                                                           required>
                                                 </div>
                                                 <div class="form-group col-md-4">
                                                     <label for="gender" class="form-label required">Gender</label>
@@ -93,11 +94,13 @@
                                                 <div class="form-group col-md-4">
                                                     <label for="dateOfBirth" class="form-label required">Date Of
                                                         Birth</label>
-                                                    <input type="date" id="dateOfBirth" class="form-control" name="dateOfBirth" required>
+                                                    <input type="date" id="dateOfBirth" class="form-control"
+                                                           name="dateOfBirth" required>
                                                 </div>
                                                 <div class="form-group col-md-4">
                                                     <label for="email" class="form-label required">Email Id</label>
-                                                    <input type="text" class="form-control" id="email" name="email" required>
+                                                    <input type="text" class="form-control" id="email" name="email"
+                                                           required>
                                                 </div>
                                             </div>
                                             <div class="form-row">
@@ -107,7 +110,8 @@
                                                            name="password">
                                                 </div>
                                                 <div class="form-group col-md-4">
-                                                    <label for="phoneNumber" class="form-label required">Phone No</label>
+                                                    <label for="phoneNumber" class="form-label required">Phone
+                                                        No</label>
                                                     <input type="text" class="form-control" id="phoneNumber"
                                                            name="phoneNo">
                                                 </div>
@@ -129,20 +133,19 @@
                                                     <label for="district" class="form-label required">District</label>
                                                     <select id="district" class="form-control" name="district">
                                                         <option value="">select district</option>
-                                                        <option value="Bihar">Bihar</option>
-                                                        <option value="Jharkhand">Jharkhand</option>
-                                                        <option value="Karnataka">Karnataka</option>
-                                                        <option value="West Bengal">West Bengal</option>
+                                                        @foreach($districts as $district)
+                                                            <option
+                                                                value="{{$district->id}}">{{$district->District}}</option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                                 <div class="form-group col-md-4">
                                                     <label for="zone" class="form-label required">Zone</label>
                                                     <select id="zone" class="form-control" name="zone">
                                                         <option value="">select zone</option>
-                                                        <option value="Bokaro">Bokaro</option>
-                                                        <option value="Ranchi">Ranchi</option>
-                                                        <option value="Jamshedpur">Jamshedpur</option>
-                                                        <option value="Dhanbad">Dhanbad</option>
+                                                        @foreach($zones as $zone)
+                                                            <option value="{{$zone->id}}">{{$zone->zoneName}}</option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
 
@@ -153,23 +156,27 @@
                                                         Point</label>
                                                     <select id="pickupPoint" class="form-control" name="pickupPoint">
                                                         <option value="">select pickup point</option>
-                                                        <option value="AAdrash Nagar">AAdrash Nagar</option>
-                                                        <option value="Lalpur">Lalpur</option>
-                                                        <option value="Sail city">Sail city</option>
-                                                        <option value="Sec 5">Sec 5</option>
+                                                        @foreach($pickupPointAreas as $pickupPointArea)
+                                                            <option
+                                                                value="{{$pickupPointArea->id}}">{{$pickupPointArea->pickupPointName}}
+                                                            </option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                                 <div class="form-group col-md-4">
                                                     <label for="dateOfJoining" class="form-label required">Date Of
                                                         Joining</label>
-                                                    <input type="text" class="form-control" id="dateOfJoining"
+                                                    <input type="date" class="form-control" id="dateOfJoining"
                                                            name="dateOfJoining">
                                                 </div>
                                                 <div class="form-group col-md-4">
-                                                    <label for="employeeType" class="form-label required">Employee Type</label>
+                                                    <label for="employeeType" class="form-label required">Employee
+                                                        Type</label>
                                                     <select id="employeeType" class="form-control" name="role">
                                                         <option value="">Select Employee Type</option>
-                                                        <option value="ROLE_PICKUP_POINT_MANAGER">Pick Up Point Manager </option>
+                                                        <option value="ROLE_PICKUP_POINT_MANAGER">Pick Up Point
+                                                            Manager
+                                                        </option>
                                                         <option value="ROLE_DELIVERY_BOY">Delivery Boy</option>
                                                     </select>
                                                 </div>
@@ -200,7 +207,8 @@
                                         <table id="table" class="table table-bordered table-hover dt-responsive">
                                             <thead>
                                             <tr>
-                                                <th class="required">First Name</th>
+                                                <th>Employee Code</th>
+                                                <th>First Name</th>
                                                 <th>Middle Name</th>
                                                 <th>Last Name</th>
                                                 <th>Gender</th>
@@ -220,132 +228,30 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr>
-                                                <td>Manisha</td>
-                                                <td>Kumari</td>
-                                                <td>Pandit</td>
-                                                <td>Female</td>
-                                                <td>Hindu</td>
-                                                <td>Single</td>
-                                                <td>5 aug, 1993</td>
-                                                <td>mk8222305@gmail.com</td>
-                                                <td>09372829173</td>
-                                                <td>AAdrash nagar, lalpur</td>
-                                                <td>Ranchi, Jharkhand, India</td>
-                                                <td>Jharkhand</td>
-                                                <td>Ranchi</td>
-                                                <td>Lalpur</td>
-                                                <td>03-11-2020</td>
-                                                <td>Delivery Boy</td>
-                                                <td><i class="fa fa-pencil mr-2" aria-hidden="true"></i>
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Manisha</td>
-                                                <td>Kumari</td>
-                                                <td>Pandit</td>
-                                                <td>Female</td>
-                                                <td>Hindu</td>
-                                                <td>Single</td>
-                                                <td>5 aug, 1993</td>
-                                                <td>mk8222305@gmail.com</td>
-                                                <td>09372829173</td>
-                                                <td>AAdrash nagar, lalpur</td>
-                                                <td>Ranchi, Jharkhand, India</td>
-                                                <td>Jharkhand</td>
-                                                <td>Ranchi</td>
-                                                <td>Lalpur</td>
-                                                <td>03-11-2020</td>
-                                                <td>Delivery Boy</td>
-                                                <td><i class="fa fa-pencil mr-2" aria-hidden="true"></i>
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Manisha</td>
-                                                <td>Kumari</td>
-                                                <td>Pandit</td>
-                                                <td>Female</td>
-                                                <td>Hindu</td>
-                                                <td>Single</td>
-                                                <td>5 aug, 1993</td>
-                                                <td>mk8222305@gmail.com</td>
-                                                <td>09372829173</td>
-                                                <td>AAdrash nagar, lalpur</td>
-                                                <td>Ranchi, Jharkhand, India</td>
-                                                <td>Jharkhand</td>
-                                                <td>Ranchi</td>
-                                                <td>Lalpur</td>
-                                                <td>03-11-2020</td>
-                                                <td>Delivery Boy</td>
-                                                <td><i class="fa fa-pencil mr-2" aria-hidden="true"></i>
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Manisha</td>
-                                                <td>Kumari</td>
-                                                <td>Pandit</td>
-                                                <td>Female</td>
-                                                <td>Hindu</td>
-                                                <td>Single</td>
-                                                <td>5 aug, 1993</td>
-                                                <td>mk8222305@gmail.com</td>
-                                                <td>09372829173</td>
-                                                <td>AAdrash nagar, lalpur</td>
-                                                <td>Ranchi, Jharkhand, India</td>
-                                                <td>Jharkhand</td>
-                                                <td>Ranchi</td>
-                                                <td>Lalpur</td>
-                                                <td>03-11-2020</td>
-                                                <td>Delivery Boy</td>
-                                                <td><i class="fa fa-pencil mr-2" aria-hidden="true"></i>
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Manisha</td>
-                                                <td>Kumari</td>
-                                                <td>Pandit</td>
-                                                <td>Female</td>
-                                                <td>Hindu</td>
-                                                <td>Single</td>
-                                                <td>5 aug, 1993</td>
-                                                <td>mk8222305@gmail.com</td>
-                                                <td>09372829173</td>
-                                                <td>AAdrash nagar, lalpur</td>
-                                                <td>Ranchi, Jharkhand, India</td>
-                                                <td>Jharkhand</td>
-                                                <td>Ranchi</td>
-                                                <td>Lalpur</td>
-                                                <td>03-11-2020</td>
-                                                <td>Delivery Boy</td>
-                                                <td><i class="fa fa-pencil mr-2" aria-hidden="true"></i>
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Manisha</td>
-                                                <td>Kumari</td>
-                                                <td>Pandit</td>
-                                                <td>Female</td>
-                                                <td>Hindu</td>
-                                                <td>Single</td>
-                                                <td>5 aug, 1993</td>
-                                                <td>mk8222305@gmail.com</td>
-                                                <td>09372829173</td>
-                                                <td>AAdrash nagar, lalpur</td>
-                                                <td>Ranchi, Jharkhand, India</td>
-                                                <td>Jharkhand</td>
-                                                <td>Ranchi</td>
-                                                <td>Lalpur</td>
-                                                <td>03-11-2020</td>
-                                                <td>Delivery Boy</td>
-                                                <td><i class="fa fa-pencil mr-2" aria-hidden="true"></i>
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                </td>
-                                            </tr>
+                                            @foreach($employees as $employee)
+                                                <tr>
+                                                    <td>{{$employee->employeeCode}}</td>
+                                                    <td>{{$employee->fName}}</td>
+                                                    <td>{{$employee->mName}}</td>
+                                                    <td>{{$employee->lName}}</td>
+                                                    <td>{{$employee->gender}}</td>
+                                                    <td>{{$employee->religion}}</td>
+                                                    <td>{{$employee->maritalStatus}}</td>
+                                                    <td>{{$employee->dateOfBirth}}</td>
+                                                    <td>{{$employee->email}}</td>
+                                                    <td>{{$employee->phoneNo}}</td>
+                                                    <td>{{$employee->address1}}</td>
+                                                    <td>{{$employee->address2}}</td>
+                                                    <td>{{$employee->district}}</td>
+                                                    <td>{{$employee->zone}}</td>
+                                                    <td>{{$employee->pickupPoint}}</td>
+                                                    <td>{{$employee->dateOfJoining}}</td>
+                                                    <td>{{$employee->employeeType}}</td>
+                                                    <td><i class="fa fa-pencil mr-2" aria-hidden="true"></i>
+                                                        <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
                                             </tbody>
                                         </table>
                                     </div>

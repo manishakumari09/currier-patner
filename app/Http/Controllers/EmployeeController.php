@@ -2,12 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\District;
 use App\Employee;
+use App\PickupPointArea;
+use App\Zone;
 use DB;
+use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
 {
+
+    public function index(Request $request)
+    {
+        $zones = Zone::all();
+        $districts = District::all();
+        $pickupPointAreas = PickupPointArea::all();
+//        $employees = Employee::latest()->paginate(10);
+        $employees = Employee::all();
+        $employeeCode = IdGenerator::generate(['table' => 'employees', 'field' => 'employeeCode', 'length' => 10, 'prefix' => 'EMP-']);
+        return view('employee', ['employeeCode' => $employeeCode], compact('districts', 'zones', 'pickupPointAreas', 'employees'));
+    }
 
     /**
      * @param Request $request

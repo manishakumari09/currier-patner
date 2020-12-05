@@ -79,17 +79,16 @@
                                                           required></textarea>
                                             </div>
                                         </div>
-
-
                                         <div class="d-flex flex-wrap">
                                             <div class="col-md-6 pr-2 mb-4">
                                                 <div class="form-group">
                                                     <select class="form-control" name="zone">
-                                                        <option>bokaro</option>
-                                                        <option>Ranchi</option>
-                                                        <option>Dhanbad</option>
+                                                        <option> Select Zone</option>
+                                                        @foreach ($zones as $zone)
+                                                            <option
+                                                                value="{{ $zone->id }}">{{ $zone->zoneName }}</option>">
+                                                        @endforeach
                                                     </select>
-                                                    <!-- <input type="text" name="zone"   class="form-control px-3 h-auto bg-transparent" placeholder="Zone" required> -->
                                                 </div>
                                             </div>
 

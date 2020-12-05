@@ -3,22 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\MerchantRegister;
-use Illuminate\Http\Request;
+use App\Zone;
 use DB;
+use Illuminate\Http\Request;
 
 //for encrypting of password
-use Illuminate\Support\Facades\Crypt;
 
 class MerchantRegisterController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
-        return view('MerchantRegister');
+        $zones = Zone::all();
+        return view('MerchantRegister', compact('zones'));
     }
 
     /**

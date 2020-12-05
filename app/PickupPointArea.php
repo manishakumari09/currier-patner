@@ -4,8 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class District extends Model
+class PickupPointArea extends Model
 {
-    protected $table = 'districts';
+    //
+    protected $table = 'pickup_point_areas';
     public $timestamps = true;
 }
