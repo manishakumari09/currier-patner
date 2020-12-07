@@ -84,7 +84,8 @@
                                                     Amount</label>
                                                 <input type="number" min="0" class="form-control"
                                                        id="totalConsignmentAmount"
-                                                       name="totalConsignmentAmount">
+                                                       readonly
+                                                       name="totalConsignmentAmount" required>
                                             </div>
                                         </div>
                                         <div class="form-row">
@@ -129,6 +130,7 @@
                                     <thead>
                                     <tr>
                                         <th>Invoice No.</th>
+                                        <th>Tracking Id</th>
                                         <th>Customer Name</th>
                                         <th>Customer Address</th>
                                         <th>Customer Phone no</th>
@@ -145,6 +147,7 @@
                                     @foreach ($consignments as $consignment)
                                         <tr>
                                             <td>{{$consignment->invoiceNo}}</td>
+                                            <td>{{$consignment->trackingId}}</td>
                                             <td>{{$consignment->customerName}}</td>
                                             <td>{{$consignment->customerAddress}}</td>
                                             <td>{{$consignment->customerPhoneNumber}}</td>

@@ -45,14 +45,9 @@ Route::get('/admin', function () {
     return view('admin');
 });
 
-Route::get('/consignment-allocation-to-pp-manager', function () {
-    return view('ConsignmentAllocationToPPManager');
-});
+
 Route::get('/consignment-receiver', function () {
     return view('ConsignmentReceiver');
-});
-Route::get('/consignment-allocation-to-delivery-boy', function () {
-    return view('ConsignmentAllocationToDeliveryBoy');
 });
 Route::get('/consignment-received-by-delivery-boy', function () {
     return view('ConsignmentReceivedByDeliveryBoy');
@@ -103,11 +98,16 @@ Route::get('/merchant-login/logout', 'MerchantLoginController@logout');
 //    return view('employee', ['employeeCode' => $employeeCode], compact('zones'));
 //});
 
-Route::get("/employee",'EmployeeController@index');
+Route::get("/employee", 'EmployeeController@index');
 Route::post('/employee-registration', 'EmployeeController@store')->name('employee-register.store');
 
 #consignment Section #
 Route::get('/consignment-entry', 'ConsignmentController@index');
 Route::post('/create-consignment', 'ConsignmentController@store')->name('create-consignment.store');
 
+Route::get('/consignment-allocation-to-delivery-boy', 'ConsignmentController@consignmentAllocationToDeliveryBoy');
 
+
+Route::put('/consignment-allocation-to-delivery-boy-process', 'ConsignmentController@consignmentAllocationToDeliveryBoyProcess')->name('consignment.consignmentAllocationToDeliveryBoyProcess');
+
+Route::get('/consignment-allocation-to-pp-manager', 'ConsignmentController@consginmentAllocationToPpManager');
