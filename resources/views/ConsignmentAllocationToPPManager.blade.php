@@ -137,12 +137,5 @@
 @endsection
 
 @push('js')
-    <script>
-        alert('hello');
-        $(document).ready(function () {
-            alert('hello jquery is working');
-            console.log('hello jquery is working');
-        })
-    </script>
 @endpush
 

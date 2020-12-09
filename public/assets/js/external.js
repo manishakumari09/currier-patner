@@ -1,6 +1,5 @@
 
 $(document).ready(function() {
-alert("Hellow");
 console.log('Hww');
 });
 // $(document).ready(function() {

@@ -58,17 +58,6 @@ class ConsignmentController extends Controller
         }
     }
 
-    public function consignmentAllocationToDeliveryBoy()
-    {
-        $consignments = Consignment::all();
-        $employees = Employee::all()->where('employeeType', '=', 'ROLE_DELIVERY_BOY');
-        return view('ConsignmentAllocationToDeliveryBoy', compact('consignments', 'employees'));
-    }
-
-    public function consignmentAllocationToDeliveryBoyProcess(Request $request)
-    {
-        return null;
-    }
 
     #Consignment Allocation to pp manager
     public function consignmentAllocationToPpManager()
@@ -132,7 +121,7 @@ class ConsignmentController extends Controller
             ->where('pickupPointManagerId', '=', $pickupPointManagerSessionId)
             ->whereNotNull('managerStatus')
             ->get();
-        return view('ConsignmentReceiver', compact('consignments','consignmentsReceived'));
+        return view('ConsignmentReceiver', compact('consignments', 'consignmentsReceived'));
     }
 
     /**
@@ -151,6 +140,38 @@ class ConsignmentController extends Controller
         }
         return redirect('consignment-receiver')
             ->with('error', 'Some Errors occurs while Updating Status.');
+    }
+
+    #=======================================#
+    #consignment Allocation to delivery boy#
+    #========================================#
+    public function consignmentAllocationToDeliveryBoy()
+    {
+//        DB::enableQueryLog();
+        $consignments = DB::table('consignments as c')
+            ->join('merchant_registers as m', 'c.merchantId', '=', 'm.id')
+            ->join('zones as z', 'c.zoneId', '=', 'z.id')
+            ->select('*', 'c.merchantId as merchantId', 'c.id as cId', 'm.id as mId', 'm.f_name as merchantFirstName', 'm.M_name as merchantMiddleName', 'm.l_name as merchantLastName', 'c.zoneId as consignmentZoneId', 'z.id as zoneId')
+            ->whereNotNull('c.pickupPointManagerId')
+            ->whereNull('c.deliveryBoyId')
+            ->orWhere('c.deliveryBoyId','=','')
+            ->get();
+//        dd(DB::getQueryLog());
+        $employees = Employee::all()->where('employeeType', '=', 'ROLE_DELIVERY_BOY');
+        return view('ConsignmentAllocationToDeliveryBoy', compact('consignments', 'employees'));
+    }
+
+    public function assignConsignmentToDeliveryBoy(Request $request, $cId)
+    {
+        $deliveryBoyId = $request->input('deliveryBoyId');
+
+        $updateQuery = DB::UPDATE("update consignments set deliveryBoyId='$deliveryBoyId' where id='$cId'");
+        if ($updateQuery) {
+            return redirect('consignment-allocation-to-delivery-boy')
+                ->with('success', 'Assigned Successfully.');
+        }
+        return redirect('consignment-allocation-to-delivery-boy')
+            ->with('error', 'Some Errors occurs while assigning to delivery boy.');
     }
 
 }

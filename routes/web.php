@@ -41,10 +41,6 @@ Route::get('/pickup', function () {
 Route::get('/super-admin', function () {
     return view('super_admin');
 });
-Route::get('/admin', function () {
-    return view('admin');
-});
-
 
 
 Route::get('/consignment-received-by-delivery-boy', function () {
@@ -103,10 +99,6 @@ Route::post('/employee-registration', 'EmployeeController@store')->name('employe
 Route::get('/consignment-entry', 'ConsignmentController@index');
 Route::post('/create-consignment', 'ConsignmentController@store')->name('create-consignment.store');
 
-Route::get('/consignment-allocation-to-delivery-boy', 'ConsignmentController@consignmentAllocationToDeliveryBoy');
-
-
-Route::put('/consignment-allocation-to-delivery-boy-process', 'ConsignmentController@consignmentAllocationToDeliveryBoyProcess')->name('consignment.consignmentAllocationToDeliveryBoyProcess');
 
 Route::get('/consignment-allocation-to-pp-manager', 'ConsignmentController@consignmentAllocationToPpManager');
 #consignment assign to pp manager
@@ -114,5 +106,20 @@ Route::put('/assign-consignment-to-pp-manager{id}', 'ConsignmentController@assig
 
 
 #consignment receiver
-Route::get('/consignment-receiver','ConsignmentController@consignmentReceiver');
+Route::get('/consignment-receiver', 'ConsignmentController@consignmentReceiver');
 Route::put('/change-consignment-received-status{id}', 'ConsignmentController@changeConsignmentReceivedStatus');
+
+#=======================================#
+#consignment Allocation to delivery boy#
+#========================================#
+Route::get('/consignment-allocation-to-delivery-boy', 'ConsignmentController@consignmentAllocationToDeliveryBoy');
+Route::put('/assign-consignment-to-delivery-boy{id}', 'ConsignmentController@assignConsignmentToDeliveryBoy');
+
+
+#=======================================#
+#SuperAdmin Section#
+#========================================#
+Route::get('/admin', 'SuperAdminController@index');
+Route::post('/super-admin-login', 'SuperAdminController@login');
+Route::get('/super-admin-dashboard', 'SuperAdminController@dashboard');
+Route::get('/super-admin-logout', 'SuperAdminController@logout');
