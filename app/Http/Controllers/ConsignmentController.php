@@ -40,9 +40,9 @@ class ConsignmentController extends Controller
             $consignment->productPrice = $request->productPrice;
             $consignment->weight = $request->weight;
             $consignment->deliveryCharge = $request->deliveryCharge;
-//            $consignment->totalAmount = $request->totalConsignmentAmount;
+//            $consignment->totalConsignmentAmount = $request->totalConsignmentAmount;
             #amount added for the total amount productPrice + delivery charge
-            $consignment->totalAmount = $request->productPrice + $request->deliveryCharge;
+            $consignment->totalConsignmentAmount = $request->productPrice + $request->deliveryCharge;
             $consignment->remark = $request->remarks;
             $consignment->zoneId = $request->zoneId;
             $consignment->trackingId = $trackingId;
@@ -70,17 +70,87 @@ class ConsignmentController extends Controller
         return null;
     }
 
-    public function consginmentAllocationToPpManager()
+    #Consignment Allocation to pp manager
+    public function consignmentAllocationToPpManager()
     {
-//        DB::enableQueryLog(); // Enable query log
         $consignments = DB::table('consignments as c')
-            ->select('*', 'c.merchantId as merchantId','c.id as cId','m.id as merchantId', 'c.zoneId as consignmentZoneId', 'z.id as zoneId')
             ->join('merchant_registers as m', 'c.merchantId', '=', 'm.id')
             ->join('zones as z', 'c.zoneId', '=', 'z.id')
+            ->select('*', 'c.merchantId as merchantId', 'c.id as cId', 'm.id as mId', 'm.f_name as merchantFirstName', 'm.M_name as merchantMiddleName', 'm.l_name as merchantLastName', 'c.zoneId as consignmentZoneId', 'z.id as zoneId')
             ->whereNull('c.pickupPointManagerId')
+            ->orWhere('c.pickupPointManagerId', '=', '')
             ->get();
-        // Your Eloquent query executed by using get()
-       //  dd(DB::getQueryLog()); // Show results of log
-        return view('consignmentAllocationToPPManager', ['consignments' => $consignments]);
+        $merchants = DB::table('consignments as con')
+            ->join('merchant_registers as mer', 'con.merchantId', '=', 'mer.id')
+            ->distinct()
+            ->get(['con.merchantId as merchantId', 'mer.id as mId', 'mer.f_name as merchantFirstName', 'mer.b_name', 'mer.M_name as merchantMiddleName', 'mer.l_name as merchantLastName']);
+        return view('consignmentAllocationToPPManager',
+            ['consignments' => $consignments]
+            , ['merchants' => $merchants]
+        );
     }
+
+    /**
+     * @param Request $request
+     * @param Product $product
+     * @return \Illuminate\Http\RedirectResponse
+     */
+
+    public function assignToPPManager(Request $request, $cId)
+    {
+        $pickupPointManagerId = $request->input('pickupPointManagerId');
+        $updateQuery = DB::UPDATE("update consignments set pickupPointManagerId='$pickupPointManagerId' where id='$cId'");
+        if ($updateQuery) {
+            return redirect('consignment-allocation-to-pp-manager')
+                ->with('success', 'Assigned Successfully.');
+        }
+        return redirect('consignment-allocation-to-pp-manager')
+            ->with('error', 'Some Errors occurs while assigning.');
+    }
+
+
+    /* Consignment Receiver */
+    public function consignmentReceiver()
+    {
+//        DB::enableQueryLog();
+        $pickupPointManagerSessionId = 9;
+        $consignments = DB::table('consignments as c')
+            ->join('merchant_registers as m', 'c.merchantId', '=', 'm.id')
+            ->join('zones as z', 'c.zoneId', '=', 'z.id')
+            ->select('*', 'c.merchantId as merchantId', 'c.id as cId', 'm.id as mId', 'm.f_name as merchantFirstName', 'm.M_name as merchantMiddleName', 'm.l_name as merchantLastName', 'c.zoneId as consignmentZoneId', 'z.id as zoneId')
+            ->where('pickupPointManagerId', '=', $pickupPointManagerSessionId)
+            ->whereNull('managerStatus')
+            ->orWhere('managerStatus', '=', '')
+            ->get();
+//        dd(DB::getQueryLog());
+
+
+        $consignmentsReceived = DB::table('consignments as c')
+            ->join('merchant_registers as m', 'c.merchantId', '=', 'm.id')
+            ->join('zones as z', 'c.zoneId', '=', 'z.id')
+            ->select('*', 'c.merchantId as merchantId', 'c.id as cId', 'm.id as mId', 'm.f_name as merchantFirstName', 'm.M_name as merchantMiddleName', 'm.l_name as merchantLastName', 'c.zoneId as consignmentZoneId', 'z.id as zoneId')
+            ->where('pickupPointManagerId', '=', $pickupPointManagerSessionId)
+            ->whereNotNull('managerStatus')
+            ->get();
+        return view('ConsignmentReceiver', compact('consignments','consignmentsReceived'));
+    }
+
+    /**
+     * @param Request $request
+     * @param $cId
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function changeConsignmentReceivedStatus(Request $request, $cId)
+    {
+        $managerStatus = $request->input('managerStatus');
+
+        $updateQuery = DB::UPDATE("update consignments set managerStatus='$managerStatus' where id='$cId'");
+        if ($updateQuery) {
+            return redirect('consignment-receiver')
+                ->with('success', 'Status Updated Successfully');
+        }
+        return redirect('consignment-receiver')
+            ->with('error', 'Some Errors occurs while Updating Status.');
+    }
+
 }

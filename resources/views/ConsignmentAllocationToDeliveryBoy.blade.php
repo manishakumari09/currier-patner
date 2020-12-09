@@ -32,10 +32,10 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <?php$i = 0?>
+                                    <?php $i = 1?>
                                     @foreach($consignments as $consignment)
                                         <tr>
-                                            <td>{{++$i}}</td>
+                                            <td>{{$i++}}</td>
                                             <td>{{$consignment->merchantName}}</td>
                                             <td>{{$consignment->trackingId}}</td>
                                             <td>{{$consignment->customerAddress}}</td>
@@ -69,7 +69,8 @@
                                                             @csrf
                                                             @method('PUT')
                                                             <div class="form-group">
-                                                                <label for="assign" class="form-label">Assign to Delivery Boy</label>
+                                                                <label for="assign" class="form-label">Assign to
+                                                                    Delivery Boy</label>
                                                                 <select class="form-control" name="assign" id="assign">
                                                                     <option value="">Select Delivery Boy</option>
                                                                     @foreach($employees as $employee)
@@ -79,7 +80,8 @@
                                                                 </select>
                                                             </div>
                                                             <div class="form-group float-right">
-                                                                <button type="submit" class="btn btn-info btn-sm pl-4 pr-4 "
+                                                                <button type="submit"
+                                                                        class="btn btn-info btn-sm pl-4 pr-4 "
                                                                         name="update">Submit
                                                                 </button>
                                                             </div>

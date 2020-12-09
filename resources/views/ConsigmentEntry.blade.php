@@ -84,7 +84,6 @@
                                                     Amount</label>
                                                 <input type="number" min="0" class="form-control"
                                                        id="totalConsignmentAmount"
-                                                       readonly
                                                        name="totalConsignmentAmount" required>
                                             </div>
                                         </div>

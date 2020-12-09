@@ -7,6 +7,7 @@
     @endpush
 
 @section('content')
+
     <section class="row pt-5">
         <div class="container-fluid pb-3 mt-xl-5 mt-3 px-lg-3 px-md-0">
             <div class="col-12 pt-4">
@@ -17,6 +18,21 @@
                                 Consignment Allocation to Pickup Point Manager
                             </div>
                             <div class="card-body">
+                                @if ($message = Session::get('success'))
+                                    <div class="alert alert-success">
+                                        <p>{{ $message }}</p>
+                                    </div>
+                                @endif
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
                                 <table id="table" class="table table-bordered table-hover table-responsive">
                                     <thead>
                                     <tr>
@@ -45,73 +61,72 @@
                                     </tr>
                                     </tfoot>
                                     <tbody>
-                                    <?php $i = 0 ?>
+                                    <?php $i = 0; ?>
                                     @foreach($consignments as $consignment)
-                                        <td>{{++$i}}</td>
-                                        <td>{{$consignment->f_name}}</td>
-                                        <td>{{$consignment->trackingId}}</td>
-                                        <td>{{$consignment->customerAddress}}</td>
-                                        <td>{{$consignment->zoneName}}</td>
-                                        <td>{{$consignment->productPrice}}</td>
-                                        <td>{{$consignment->deliveryCharge}}</td>
-                                        <td>{{$consignment->totalAmount}}</td>
-                                        <td><a href="#" data-toggle="modal"
-                                               data-target="#myModal{{$consignment->cId}}" type="button"
-                                               class="btn btn-info btn-sm pl-4 pr-4 mr-4 btn-sm">
-                                              <i class="fa fa-reply"></i>  Assign To PP Manager
-                                            </a>
-                                        </td>
+                                        <tr>
+                                            <td>{{++$i}}</td>
+                                            <td>{{$consignment->f_name}} {{$consignment->M_name}} {{$consignment->l_name}}</td>
+                                            <td>{{$consignment->trackingId}}</td>
+                                            <td>{{$consignment->customerAddress}}</td>
+                                            <td>{{$consignment->zoneName}}</td>
+                                            <td>{{$consignment->productPrice}}</td>
+                                            <td>{{$consignment->deliveryCharge}}</td>
+                                            <td>{{$consignment->totalAmount}}</td>
+                                            <td><a href="#" data-toggle="modal"
+                                                   data-target="#exampleModal{{$consignment->cId}}"
+                                                   class="btn btn-info btn-sm pl-4 pr-4 mr-4 btn-sm">
+                                                    <i class="fa fa-reply"></i> Assign To PP Manager
+                                                </a>
+                                            </td>
                                         </tr>
-                                        <!-- Edit Modal -->
-                                        <div class="modal fade" id="myModal{{$consignment->cId}}" role="dialog">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title">Assign To Delivery Boy</h5>
-                                                        <button type="button" class="close" data-dismiss="modal">
-                                                            &times;
-                                                        </button>
-
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <form method="post" name="EditForm" id="EditForm"
-                                                              action="{{route('consignment.consignmentAllocationToDeliveryBoyProcess',$consignment->id)}}"
-                                                              role="form">
-                                                            @csrf
-                                                            @method('PUT')
-                                                            <div class="form-group">
-                                                                <label for="assign" class="form-label">Assign to
-                                                                    Delivery Boy</label>
-                                                                <select class="form-control" name="assign" id="assign">
-                                                                    <option value="">Select PP Manager</option>
-                                                                    @foreach($merchants as $merchant)
-                                                                        <option
-                                                                            value="{{$merchant->id}}">{{$merchant->fName}} {{$merchant->mName}} {{$merchant->lName}}</option>
-                                                                    @endforeach
-                                                                </select>
-                                                            </div>
-                                                            <div class="form-group float-right">
-                                                                <button type="submit"
-                                                                        class="btn btn-info btn-sm pl-4 pr-4 "
-                                                                        name="update">Submit
-                                                                </button>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-
+                                    @endforeach
+                                    </tbody>
+                                </table>
+                                {{--  Assign to pp manager modal--}}
+                                @foreach($consignments as $consignment)
+                                    <div class="modal fade" id="exampleModal{{$consignment->cId}}" tabindex="-1"
+                                         role="dialog"
+                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Assign to PP
+                                                        Manager</h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
                                                 </div>
+                                                <form method="post" action="/assign-consignment-to-pp-manager{{$consignment->cId}}">
+                                                    <div class="modal-body">
+                                                        @csrf
+                                                        @method('PUT')
+                                                        <input type="hidden" name="cId" id="cId" value="{{$consignment->cId}}">
+                                                        <select class="form-control" name="pickupPointManagerId" id="assign"
+                                                                required>
+                                                            <option value="">Select PP Manager</option>
+                                                            @foreach($merchants as $merchant)
+                                                                <option
+                                                                    value="{{$merchant->mId}}">{{$merchant->merchantFirstName}} {{$merchant->merchantMiddleName}} {{$merchant->merchantLastName}}
+                                                                    ({{$merchant->b_name}})
+                                                                </option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                                data-dismiss="modal">Close
+                                                        </button>
+                                                        <button type="submit" class="btn btn-primary">Assign To PP
+                                                            Manager
+                                                        </button>
+                                                    </div>
+                                                </form>
                                             </div>
                                         </div>
-                                        <!-- Edit modal End -->
-                                    @endforeach
-
-                                    </tbody>
-
-                                </table>
-                                {{--                                <div class="p-3">--}}
-                                {{--                                    <button type="button" class="btn btn-info btn-sm pl-4 pr-4 mr-4">Submit</button>--}}
-                                {{--                                    <button type="button" class="btn btn-danger btn-sm pl-4 pr-4">Reset</button>--}}
-                                {{--                                </div>--}}
+                                    </div>
+                                @endforeach
+                                {{-- end of  Assign to pp manager modal--}}
                             </div>
                         </div>
                     </div>
@@ -122,5 +137,12 @@
 @endsection
 
 @push('js')
-
+    <script>
+        alert('hello');
+        $(document).ready(function () {
+            alert('hello jquery is working');
+            console.log('hello jquery is working');
+        })
+    </script>
 @endpush
+

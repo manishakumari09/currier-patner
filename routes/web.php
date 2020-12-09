@@ -46,9 +46,7 @@ Route::get('/admin', function () {
 });
 
 
-Route::get('/consignment-receiver', function () {
-    return view('ConsignmentReceiver');
-});
+
 Route::get('/consignment-received-by-delivery-boy', function () {
     return view('ConsignmentReceivedByDeliveryBoy');
 });
@@ -110,4 +108,11 @@ Route::get('/consignment-allocation-to-delivery-boy', 'ConsignmentController@con
 
 Route::put('/consignment-allocation-to-delivery-boy-process', 'ConsignmentController@consignmentAllocationToDeliveryBoyProcess')->name('consignment.consignmentAllocationToDeliveryBoyProcess');
 
-Route::get('/consignment-allocation-to-pp-manager', 'ConsignmentController@consginmentAllocationToPpManager');
+Route::get('/consignment-allocation-to-pp-manager', 'ConsignmentController@consignmentAllocationToPpManager');
+#consignment assign to pp manager
+Route::put('/assign-consignment-to-pp-manager{id}', 'ConsignmentController@assignToPPManager');
+
+
+#consignment receiver
+Route::get('/consignment-receiver','ConsignmentController@consignmentReceiver');
+Route::put('/change-consignment-received-status{id}', 'ConsignmentController@changeConsignmentReceivedStatus');
