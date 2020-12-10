@@ -101,3 +101,18 @@ Route::get('/merchant-login/success-login', 'MerchantLoginController@successLogi
 //});
 Route::get('/merchant-login/logout', 'MerchantLoginController@logout');
 
+Route::get('/MerchantDashboard', function () {
+    return view('MerchantDashboard');
+});
+Route::get('/PPManagerDashboard', function () {
+    return view('PPManagerDashboard');
+});
+Route::get('/DeliveryBoyDashboard', function () {
+    return view('DeliveryBoyDashboard');
+});
+Route::get('/CompanyDashboard', function () {
+    return view('CompanyDashboard');
+});
+
+
+
