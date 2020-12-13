@@ -1862,3 +1862,9 @@ color: #88898a;
     font-size: 14px;
 }
 
+body:not(.sidebar-mini-md) .content-wrapper, body:not(.sidebar-mini-md) .main-footer, body:not(.sidebar-mini-md) .main-header {
+    margin-left: 316px !important;
+}
+.main-sidebar, .main-sidebar::before {
+    width: 315px !important;
+}

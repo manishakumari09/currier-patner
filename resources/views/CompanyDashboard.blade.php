@@ -190,9 +190,21 @@
                 </a>
               </li> -->
               <li class="nav-item">
-                <a href="./index3.html" class="nav-link active">
+                <a href="#" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Dashboard</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/consignment-allocation-to-pp-manager" target="_blank" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Parcel alloction to PP Manager</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/employee" target="_blank" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Employee Registration</p>
                 </a>
               </li>
             </ul>
