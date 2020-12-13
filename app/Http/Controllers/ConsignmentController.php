@@ -153,8 +153,9 @@ class ConsignmentController extends Controller
             ->join('zones as z', 'c.zoneId', '=', 'z.id')
             ->select('*', 'c.merchantId as merchantId', 'c.id as cId', 'm.id as mId', 'm.f_name as merchantFirstName', 'm.M_name as merchantMiddleName', 'm.l_name as merchantLastName', 'c.zoneId as consignmentZoneId', 'z.id as zoneId')
             ->whereNotNull('c.pickupPointManagerId')
+//            ->whereNotNull('c.managerStatus')
             ->whereNull('c.deliveryBoyId')
-            ->orWhere('c.deliveryBoyId','=','')
+            ->orWhere('c.deliveryBoyId', '=', '')
             ->get();
 //        dd(DB::getQueryLog());
         $employees = Employee::all()->where('employeeType', '=', 'ROLE_DELIVERY_BOY');
@@ -174,4 +175,43 @@ class ConsignmentController extends Controller
             ->with('error', 'Some Errors occurs while assigning to delivery boy.');
     }
 
+    /* Consignment Receiver */
+    public function consignmentReceivedByDeliveryBoy()
+    {
+//        DB::enableQueryLog();
+        $deliveryBoySessionId = 1;
+        $consignments = DB::table('consignments as c')
+            ->join('merchant_registers as m', 'c.merchantId', '=', 'm.id')
+            ->join('zones as z', 'c.zoneId', '=', 'z.id')
+            ->select('*', 'c.merchantId as merchantId', 'c.id as cId', 'm.id as mId', 'm.f_name as merchantFirstName', 'm.M_name as merchantMiddleName', 'm.l_name as merchantLastName', 'c.zoneId as consignmentZoneId', 'z.id as zoneId')
+            ->where('deliveryBoyId', '=', $deliveryBoySessionId)
+            ->whereNotNull('c.managerStatus')
+            ->whereNotNull('c.merchantId')
+            ->whereNull('c.DeliveryBoyStatus')
+            ->get();
+//        dd(DB::getQueryLog());
+
+
+        $consignmentsReceived = DB::table('consignments as c')
+            ->join('merchant_registers as m', 'c.merchantId', '=', 'm.id')
+            ->join('zones as z', 'c.zoneId', '=', 'z.id')
+            ->select('*', 'c.merchantId as merchantId', 'c.id as cId', 'm.id as mId', 'm.f_name as merchantFirstName', 'm.M_name as merchantMiddleName', 'm.l_name as merchantLastName', 'c.zoneId as consignmentZoneId', 'z.id as zoneId')
+            ->where('deliveryBoyId', '=', $deliveryBoySessionId)
+            ->whereNotNull('DeliveryBoyStatus')
+            ->get();
+        return view('ConsignmentReceivedByDeliveryBoy', compact('consignments', 'consignmentsReceived'));
+    }
+
+    public function changeReceivedStatusByDeliveryBoy(Request $request, $cId)
+    {
+        $DeliveryBoyStatus = $request->input('DeliveryBoyStatus');
+
+        $updateQuery = DB::UPDATE("update consignments set DeliveryBoyStatus='$DeliveryBoyStatus' where id='$cId'");
+        if ($updateQuery) {
+            return redirect('consignment-received-by-delivery-boy')
+                ->with('success', 'Status Updated Successfully');
+        }
+        return redirect('consignment-received-by-delivery-boy')
+            ->with('error', 'Some Errors occurs while Updating Status.');
+    }
 }

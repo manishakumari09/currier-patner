@@ -43,9 +43,6 @@ Route::get('/super-admin', function () {
 });
 
 
-Route::get('/consignment-received-by-delivery-boy', function () {
-    return view('ConsignmentReceivedByDeliveryBoy');
-});
 // Route::get('/zone', 'ZoneController@allList');
 // Route::get('/zone', 'ZoneController@zones');
 // Route::post('/zone', 'ZoneController@store')->name('zone.store');
@@ -114,6 +111,8 @@ Route::put('/change-consignment-received-status{id}', 'ConsignmentController@cha
 #========================================#
 Route::get('/consignment-allocation-to-delivery-boy', 'ConsignmentController@consignmentAllocationToDeliveryBoy');
 Route::put('/assign-consignment-to-delivery-boy{id}', 'ConsignmentController@assignConsignmentToDeliveryBoy');
+Route::get('/consignment-received-by-delivery-boy', 'ConsignmentController@consignmentReceivedByDeliveryBoy');
+Route::put('/change-received-status-of-delivery-boy{id}', 'ConsignmentController@changeReceivedStatusByDeliveryBoy');
 
 
 #=======================================#

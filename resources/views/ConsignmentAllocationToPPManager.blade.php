@@ -71,7 +71,7 @@
                                             <td>{{$consignment->zoneName}}</td>
                                             <td>{{$consignment->productPrice}}</td>
                                             <td>{{$consignment->deliveryCharge}}</td>
-                                            <td>{{$consignment->totalAmount}}</td>
+                                            <td>{{$consignment->totalConsignmentAmount}}</td>
                                             <td><a href="#" data-toggle="modal"
                                                    data-target="#exampleModal{{$consignment->cId}}"
                                                    class="btn btn-info btn-sm pl-4 pr-4 mr-4 btn-sm">

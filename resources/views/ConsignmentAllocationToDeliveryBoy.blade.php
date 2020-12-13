@@ -94,7 +94,7 @@
                                                         <div class="form-group">
                                                             <label for="assign" class="form-label">Assign to
                                                                 Delivery Boy</label>
-                                                            <input type="text" value="{{$consignment->cId}}">
+                                                            <input type="hidden" value="{{$consignment->cId}}">
                                                             <select class="form-control" name="deliveryBoyId"
                                                                     id="assign" required>
                                                                 <option value="">Select Delivery Boy</option>

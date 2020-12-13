@@ -66,7 +66,7 @@
                                             <td>{{$consignment->zoneName}}</td>
                                             <td>{{$consignment->productPrice}}</td>
                                             <td>{{$consignment->deliveryCharge}}</td>
-                                            <td>{{$consignment->totalAmount}}</td>
+                                            <td>{{$consignment->totalConsignmentAmount}}</td>
                                             {{--                                            <td><input type="checkbox" name="" class="mr-2"/>Recieved</td>--}}
                                             <td><a href="#" data-toggle="modal"
                                                    data-target="#exampleModal{{$consignment->cId}}"
