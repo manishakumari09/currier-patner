@@ -1,6 +1,5 @@
 <?php
 
-
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -122,3 +121,18 @@ Route::get('/admin', 'SuperAdminController@index');
 Route::post('/super-admin-login', 'SuperAdminController@login');
 Route::get('/super-admin-dashboard', 'SuperAdminController@dashboard');
 Route::get('/super-admin-logout', 'SuperAdminController@logout');
+Route::get('/MerchantDashboard', function () {
+    return view('MerchantDashboard');
+});
+Route::get('/PPManagerDashboard', function () {
+    return view('PPManagerDashboard');
+});
+Route::get('/DeliveryBoyDashboard', function () {
+    return view('DeliveryBoyDashboard');
+});
+Route::get('/CompanyDashboard', function () {
+    return view('CompanyDashboard');
+});
+
+
+

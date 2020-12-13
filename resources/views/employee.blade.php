@@ -2,9 +2,9 @@
 
 @section('home')
 
-    @push('css')
+@push('css')
 
-    @endpush
+@endpush
 
 @section('content')
 
