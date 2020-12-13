@@ -49,7 +49,7 @@
             <div class="col-12">
                 <div class="row align-items-center">
                     <div class="col-xl-4 col-lg-4 col pl-0">
-                        <a href="#"><img src="{{asset('assets/icon/logo-new.jpg')}}" alt="logo"></a>
+                        <a href="#"><img src="{{asset('assets/icon/STK-Express-logo.png')}}" alt="logo"></a>
                         <p class="mb-0 pt-2 font-14 text-white">Level 2,House No 13,Road No 2,Sector 6,Uttara,Dhaka, Bangladesh 1230.</p>
                         <p class="mb-0 font-14 text-white"><span class="font-medium">E-mail:&nbsp;</span><a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="a4cdcac2cbe4d7d0c1c5c0c2c5d7d0c7cbd1d6cdc1d68ac7cbc9">stkitbd@gmail.com</a></p>
                         <p class="mb-0 font-14 text-white"><span class="font-medium">Contact us:&nbsp;</span>01701046549</p>

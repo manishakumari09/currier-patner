@@ -3,7 +3,7 @@
     <nav class="navbar fixed-top shadow-sm navbar-expand-lg py-md-0 py-1 bg-white navbar-light-cs">
 				<div class="container">
 					<a class="navbar-brand" href="index.php">
-						<img src="{{asset('assets/icon/logo-new.png')}}" class="img-fluid" alt="Steadfastcourier">
+						<img src="{{asset('assets/icon/STK-Express-logo.png')}}" class="img-fluid" alt="Steadfastcourier">
 					</a>
 					<div>
 						<a href="merchant-login" class="btn font-13 btn-log text-seagreen border-lightseagreen-1 mr-4 d-lg-none">Login</a>
@@ -145,7 +145,7 @@
 							<li class="nav-item mx-lg-3 py-lg-3 py-md-2 py-1">
 								<a class="nav-link font-sm-14 text-dark" href="">Contact Us</a>
                             </li>
-                            <li class="nav-item dropdown mx-lg-3 py-lg-3 py-md-2 py-1">
+                            <!-- <li class="nav-item dropdown mx-lg-3 py-lg-3 py-md-2 py-1">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Master
                                 </a>
@@ -162,7 +162,7 @@
                                     <a class="dropdown-item" href="pickup">Pickup</a>
                                     <a class="dropdown-item" href="admin">Admin</a>
                                 </div>
-                            </li>
+                            </li> -->
 														<li class="nav-item mx-lg-3 py-lg-3 py-md-2 py-1">
 								<a class="nav-link font-sm-14 text-dark outline rounded px-3 py-1" href="merchant-register">Register</a>
 							</li>

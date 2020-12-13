@@ -190,9 +190,21 @@
                 </a>
               </li> -->
               <li class="nav-item">
-                <a href="./index3.html" class="nav-link active">
+                <a href="#" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Dashboard</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/consignment-receiver" target="_blank" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Parcel Receiver</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/consignment-allocation-to-delivery-boy" target="_blank" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Parcel alloction to delivery boy</p>
                 </a>
               </li>
             </ul>
