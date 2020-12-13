@@ -31,27 +31,16 @@
                                 <h3 class="text-left text-color-13 font-h-md-23 font-regular">Log in to access</h3>
                             </div>
 
-                            @if(isset(Auth::user()->email))
-                                <script>
-                                    window.location="/merchant-login/success-login";
-                                </script>
-                            @endif
+{{--                            @if(isset(Auth::user()->email))--}}
+{{--                                <script>--}}
+{{--                                    window.location="/merchant-login/success-login";--}}
+{{--                                </script>--}}
+{{--                            @endif--}}
 
                             @if($message = Session::get('error'))
                                 <div class="alert alert-danger alert-block">
                                     <button type="button" class="close" data-dismiss="alert">x</button>
                                     <strong>{{ $message }}</strong>
-                                </div>
-                            @endif
-
-
-                            @if (count($errors) > 0)
-                                <div class="alert alert-danger">
-                                    <ul>
-                                        @foreach($erros->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
                                 </div>
                             @endif
 

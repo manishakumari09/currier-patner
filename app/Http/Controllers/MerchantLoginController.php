@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\MerchantLogin;
-use Illuminate\Http\Request;
-use Validator;
 use Auth;
 use DB;
+use Session;
+use Illuminate\Http\Request;
+use Validator;
 
 class MerchantLoginController extends Controller
 {
@@ -88,19 +89,38 @@ class MerchantLoginController extends Controller
 
     function checkLogin(Request $request)
     {
-//        return $request->input();
-        $this->validate($request, [
-            'email' => 'required|email',
-            'password' => 'required|alphaNum|min:3'
-        ]);
+////        return $request->input();
+////        $this->validate($request, [
+////            'email' => 'required|email',
+////            'password' => 'required'
+////        ]);
+//        $email = $request->input('email');
+//        $password = $request->input('password');
+//        $loginQuery = DB::Table('merchant_registers')->where('email', '=', $email)->where('password', '=', $password)->count();
+//        if ($loginQuery > 0) {
+//            $request->session()->put('merchant', $email);
+//            return redirect('merchant-login/success-login');
+//        }
+//        return redirect()->back()->with('errors', 'Invalid Email and  Password !');;
+        //        return $request->input();
         $email = $request->input('email');
         $password = $request->input('password');
-        $loginQuery = DB::Table('merchant_registers')->where('email', '=', $email)->where('password', '=', $password)->count();
-        if ($loginQuery > 0) {
-            $request->session()->put('merchant', $email);
-            return redirect('merchant-login/success-login');
+        $Count = DB::Table('user_login')
+            ->where('email', '=', $email)
+            ->where('password', '=', $password)
+            ->count();
+        if ($Count > 0) {
+            $sessionData = DB::select("select id,name,email,role from user_login where email='$email'");
+            $name = $sessionData[0]->name;
+            $id = $sessionData[0]->id;
+            $role = $sessionData[0]->role;
+            $email = $sessionData[0]->email;
+            Session::put('userData', ['email' => $email, 'name' => $name, 'id' => $id, 'role' => $role]);
+            return redirect('/merchant-login/success-login');
+        } else {
+            return redirect()->back()->with("error", "Email or Password may be wrong");
         }
-        return redirect()->back()->with('error','Invalid Email and  Password !');;
+
     }
 
     function successLogin()

@@ -59,18 +59,21 @@
 <br>
 <br>
 <div class="container box">
-    <h3 align="center">Simple login system in laravel {{session('merchant')}}</h3>
+    <h3 align="center">Simple login system in laravel {{ session()->get('userData')["name"] }}</h3>
+    <h3 align="center">Simple login system in laravel {{ session()->get('userData')["id"] }}</h3>
+    <h3 align="center">Simple login system in laravel {{ session()->get('userData')["email"] }}</h3>
+    <h3 align="center">Simple login system in laravel {{ session()->get('userData')["role"] }}</h3>
     <a href="{{ url('/merchant-login/logout') }}">Logout</a>
     <br>
-    @if(isset(Auth::user()->email))
-        <div class="alert alert-danger success-block">
-            <strong>Welcome {{ Auth::user()->email }}</strong>
-        </div>
-        <br>
-        <a href="{{ url('/merchant-login/logout') }}"></a>
-        else
-        <script>window.location = "/merchant-login";</script>
-    @endif
+{{--    @if(isset(Auth::user()->email))--}}
+{{--        <div class="alert alert-danger success-block">--}}
+{{--            <strong>Welcome {{ Auth::user()->email }}</strong>--}}
+{{--        </div>--}}
+{{--        <br>--}}
+{{--        <a href="{{ url('/merchant-login/logout') }}"></a>--}}
+{{--        else--}}
+{{--        <script>window.location = "/merchant-login";</script>--}}
+{{--    @endif--}}
 </div>
 
 
