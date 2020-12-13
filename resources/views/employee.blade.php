@@ -11,6 +11,18 @@
 <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
 <script>
+    $(function () {
+        $("#employeetype").change(function () {
+            if ($(this).val() == "Y") {
+                $("#PPManager").show();
+            } else {
+                $("#PPManager").hide();
+            }
+        });
+    });
+
+</script>
+<script>
 $(document).ready(function() {
 
 $('.datepicker').datetimepicker({
@@ -18,6 +30,7 @@ $('.datepicker').datetimepicker({
 });
 });
 </script>
+
 <section class="row pt-5 form-font">
     <div class="container-fluid pb-3 mt-xl-5 mt-3 px-lg-3 px-md-0">
        <div class="col-md-12">
@@ -165,16 +178,32 @@ $('.datepicker').datetimepicker({
                                                 <input type="text" class="form-control" id="inputAddress">
                                             </div>
                                             <div class="form-group col-md-4">
-                                                <label for="inputState" class="form-label required">EmployeeType</label>
-                                                <select id="inputState" class="form-control">
-                                                    <option value="">select employee type</option>
-                                                    <option value="">Pick Up Point Manager</option>
-                                                    <option>Delivery Boy</option>
+                                                <label for="EmployeeType" class="form-label required">EmployeeType</label>
+                                                <select id="employeetype" class="form-control">
+                                                    <option>select employee type</option>
+                                                    <option value="N">Pick Up Point Manager</option>
+                                                    <option value="Y">Delivery Boy</option>
                                                 </select>
                                             </div>
                                         </div>
 
+                                        <div class="form-row">
+
+                                        <div class="form-group col-md-4" id="PPManager" style="display: none">
+                                                <label for="otherField" class="form-label required">Pickup Point Manager</label>
+                                                <select id="otherField" class="form-control">
+                                                    <option value="">select pickup Point Manager</option>
+                                                    <option value="">Manisha</option>
+                                                    <option>Souvik</option>
+                                                    <option value="">Ajeet</option>
+                                                </select>
+                                            </div>
+
+
                                     </div>
+                                    </div>
+
+
 
                                     </div>
                                     <div class="bottom-btn p-3">
