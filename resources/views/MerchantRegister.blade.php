@@ -61,7 +61,7 @@
                                                 <div class="form-group mb-0">
                                                     <input type="text" name="M_name"
                                                            class="form-control px-3 h-auto bg-transparent"
-                                                           placeholder="Middle Name" required>
+                                                           placeholder="Middle Name">
                                                 </div>
                                             </div>
                                             <div class="col pl-2 mb-4">

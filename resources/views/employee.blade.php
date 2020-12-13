@@ -17,21 +17,19 @@
                             <div class="card-header">
                                 <b>Employee</b> Form
                             </div>
-                            <div class="card-body p-0">
-                                <div class="row">
-                                    {{-- Handling Error and Success Message --}}
-                                    @if (session('status'))
-                                        <div class="alert alert-success" role="alert">
-                                            <button type="button" class="close" data-dismiss="alert">×</button>
-                                            {{ session('status') }}
-                                        </div>
-                                    @elseif(session('failed'))
-                                        <div class="alert alert-danger" role="alert">
-                                            <button type="button" class="close" data-dismiss="alert">×</button>
-                                            {{ session('failed') }}
-                                        </div>
-                                    @endif
+                            {{-- Handling Error and Success Message --}}
+                            @if (session('status'))
+                                <div class="alert alert-success" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert">×</button>
+                                    {{ session('status') }}
                                 </div>
+                            @elseif(session('failed'))
+                                <div class="alert alert-danger" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert">×</button>
+                                    {{ session('failed') }}
+                                </div>
+                            @endif
+                            <div class="card-body p-0">
                                 <form method="post" action="{{route('employee-register.store')}}">
                                     @csrf
                                     <div class="p-3">
@@ -46,7 +44,8 @@
                                                 <div class="form-group col-md-4">
                                                     <label for="fName" class="form-label required">First
                                                         Name</label>
-                                                    <input type="text" class="form-control" name="fName" id="fName">
+                                                    <input type="text" class="form-control" name="fName" id="fName"
+                                                           required>
                                                 </div>
                                                 <div class="form-group col-md-4">
                                                     <label for="mName" class="form-label">Middle Name</label>
@@ -107,7 +106,7 @@
                                                 <div class="form-group col-md-4">
                                                     <label for="password" class="form-label required">Password</label>
                                                     <input type="password" class="form-control" id="password"
-                                                           name="password">
+                                                           name="password" required>
                                                 </div>
                                                 <div class="form-group col-md-4">
                                                     <label for="phoneNumber" class="form-label required">Phone
@@ -119,7 +118,7 @@
                                                     <label for="address1" class="form-label required">Address
                                                         1</label>
                                                     <input type="text" class="form-control" id="address1"
-                                                           name="address1">
+                                                           name="address1" required>
                                                 </div>
 
                                             </div>
@@ -131,7 +130,7 @@
                                                 </div>
                                                 <div class="form-group col-md-4">
                                                     <label for="district" class="form-label required">District</label>
-                                                    <select id="district" class="form-control" name="district">
+                                                    <select id="district" class="form-control" name="district" required>
                                                         <option value="">select district</option>
                                                         @foreach($districts as $district)
                                                             <option
@@ -140,7 +139,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="form-group col-md-4">
-                                                    <label for="zone" class="form-label required">Zone</label>
+                                                    <label for="zone" class="form-label required" required>Zone</label>
                                                     <select id="zone" class="form-control" name="zone">
                                                         <option value="">select zone</option>
                                                         @foreach($zones as $zone)
@@ -154,7 +153,8 @@
                                                 <div class="form-group col-md-4">
                                                     <label for="pickupPoint" class="form-label required">Pickup
                                                         Point</label>
-                                                    <select id="pickupPoint" class="form-control" name="pickupPoint">
+                                                    <select id="pickupPoint" class="form-control" name="pickupPoint"
+                                                            required>
                                                         <option value="">select pickup point</option>
                                                         @foreach($pickupPointAreas as $pickupPointArea)
                                                             <option
@@ -167,12 +167,12 @@
                                                     <label for="dateOfJoining" class="form-label required">Date Of
                                                         Joining</label>
                                                     <input type="date" class="form-control" id="dateOfJoining"
-                                                           name="dateOfJoining">
+                                                           name="dateOfJoining" required>
                                                 </div>
                                                 <div class="form-group col-md-4">
                                                     <label for="employeeType" class="form-label required">Employee
                                                         Type</label>
-                                                    <select id="employeeType" class="form-control" name="role">
+                                                    <select id="employeeType" class="form-control" name="role" required>
                                                         <option value="">Select Employee Type</option>
                                                         <option value="ROLE_PICKUP_POINT_MANAGER">Pick Up Point
                                                             Manager
