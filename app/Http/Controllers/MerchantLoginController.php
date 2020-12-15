@@ -111,18 +111,21 @@ class MerchantLoginController extends Controller
             ->count();
         if ($Count > 0) {
             $sessionData = DB::select("select id,name,email,role from user_login where email='$email'");
-            $name = $sessionData[0]->name;
+//            $name = $sessionData[0]->name;
             $id = $sessionData[0]->id;
             $role = $sessionData[0]->role;
             $email = $sessionData[0]->email;
             if ($role == "ROLE_MERCHANT") {
-                Session::put('merchant', ['email' => $email, 'name' => $name, 'id' => $id, 'role' => $role]);
+                $merchantSessionData = DB::select("select id,f_name,m_name,l_name,email from merchant_registers where email='$email'");
+                Session::put('merchant', ['email' => $merchantSessionData[0]->email, 'name' =>  $merchantSessionData[0]->fName.' '.$merchantSessionData[0]->mName.' '.$merchantSessionData[0]->lName, 'id' => $merchantSessionData[0]->id, 'role' => $role]);
                 return redirect('/MerchantDashboard');
             } else if ($role == "ROLE_PICKUP_POINT_MANAGER") {
-                Session::put('pp_manager', ['email' => $email, 'name' => $name, 'id' => $id, 'role' => $role]);
+                $pickupPointManagerSessionData = DB::select("select id,fName,lName,mName,email employeeType from employees where email='$email'");
+                Session::put('pp_manager', ['email' => $email, 'name' => $pickupPointManagerSessionData[0]->fName.' '.$pickupPointManagerSessionData[0]->mName.' '.$pickupPointManagerSessionData[0]->lName, 'id' => $pickupPointManagerSessionData[0]->id, 'role' => $pickupPointManagerSessionData[0]->employeeType]);
                 return redirect('/PPManagerDashboard');
             } else if ($role == 'ROLE_DELIVERY_BOY') {
-                Session::put('delivery_boy', ['email' => $email, 'name' => $name, 'id' => $id, 'role' => $role]);
+                $deliveryBoySessionData = DB::select("select id,fName,lName,mName,email employeeType from employees where email='$email'");
+                Session::put('delivery_boy', ['email' => $email, 'name' =>  $deliveryBoySessionData[0]->fName.' '.$deliveryBoySessionData[0]->mName.' '.$deliveryBoySessionData[0]->lName, 'id' => $id, 'role' => $role]);
                 return redirect('/DeliveryBoyDashboard');
             } else {
                 return redirect()->back()->with("error", "Email or Password may be wrong");

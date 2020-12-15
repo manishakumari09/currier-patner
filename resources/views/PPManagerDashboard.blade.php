@@ -17,7 +17,12 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
 </head>
-
+@if(empty(Session::has('pp_manager')))
+    <script>
+        alert("Please login to access this page ");
+        window.location = "/merchant-login";
+    </script>
+@endif
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
   <!-- Navbar -->
@@ -159,7 +164,7 @@
           <img src="{{asset('assets/icon/img/avatar.png')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Manisha Kumari</a>
+          <a href="#" class="d-block">{{ session()->get('pp_manager')["name"] }}</a>
         </div>
       </div>
 
@@ -209,6 +214,15 @@
               </li>
             </ul>
           </li>
+            <li class="nav-item">
+                <a href="/merchant-login/logout" class="nav-link">
+                    <i class="nav-icon fas fa-th"></i>
+                    <p>
+                        Logout
+                        <span class="right badge badge-danger">New</span>
+                    </p>
+                </a>
+            </li>
           <!-- <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
               <i class="nav-icon fas fa-th"></i>

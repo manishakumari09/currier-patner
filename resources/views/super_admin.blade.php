@@ -14,6 +14,13 @@
                     <div class="col-lg-12 login-title">
                         Admin Login
                     </div>
+                    @if($message = Session::get('error'))
+                        <div class="alert alert-danger alert-block">
+                            <button type="button" class="close" data-dismiss="alert">x</button>
+                            <strong>{{ $message }}</strong>
+                        </div>
+                    @endif
+
 
                     <div class="col-lg-12 login-form">
                         <div class="col-lg-12 login-form">

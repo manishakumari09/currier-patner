@@ -70,13 +70,17 @@ class ConsignmentController extends Controller
             ->whereNull('c.pickupPointManagerId')
             ->orWhere('c.pickupPointManagerId', '=', '')
             ->get();
-        $merchants = DB::table('consignments as con')
-            ->join('merchant_registers as mer', 'con.merchantId', '=', 'mer.id')
-            ->distinct()
-            ->get(['con.merchantId as merchantId', 'mer.id as mId', 'mer.f_name as merchantFirstName', 'mer.b_name', 'mer.M_name as merchantMiddleName', 'mer.l_name as merchantLastName']);
+//        $merchants = DB::table('consignments as con')
+//            ->join('merchant_registers as mer', 'con.merchantId', '=', 'mer.id')
+//            ->distinct()
+//            ->get(['con.merchantId as merchantId', 'mer.id as mId', 'mer.f_name as merchantFirstName', 'mer.b_name', 'mer.M_name as merchantMiddleName', 'mer.l_name as merchantLastName']);
+//        DB::enableQueryLog();
+//        $ppManager = DB::select("select e.id as ppId,e.fName as ppFirstName, e.mName as ppMiddleName, e.lName as ppLastName from  employees as e");
+        $ppManager = DB::table('employees as e')->select('e.id as ppId', 'e.fName as ppFirstName', 'e.mName as ppMiddleName', 'e.lName as ppLastName')->get();
+//        dd(DB::getQueryLog());
         return view('consignmentAllocationToPPManager',
             ['consignments' => $consignments]
-            , ['merchants' => $merchants]
+            , ['ppManager' => $ppManager]
         );
     }
 
@@ -103,7 +107,7 @@ class ConsignmentController extends Controller
     public function consignmentReceiver()
     {
 //        DB::enableQueryLog();
-        $pickupPointManagerSessionId = 9;
+        $pickupPointManagerSessionId = session()->get('pp_manager')["id"];
         $consignments = DB::table('consignments as c')
             ->join('merchant_registers as m', 'c.merchantId', '=', 'm.id')
             ->join('zones as z', 'c.zoneId', '=', 'z.id')
@@ -148,18 +152,20 @@ class ConsignmentController extends Controller
     #========================================#
     public function consignmentAllocationToDeliveryBoy()
     {
+        $pickupPointManagerSessionId = session()->get('pp_manager')["id"];
 //        DB::enableQueryLog();
         $consignments = DB::table('consignments as c')
             ->join('merchant_registers as m', 'c.merchantId', '=', 'm.id')
             ->join('zones as z', 'c.zoneId', '=', 'z.id')
             ->select('*', 'c.merchantId as merchantId', 'c.id as cId', 'm.id as mId', 'm.f_name as merchantFirstName', 'm.M_name as merchantMiddleName', 'm.l_name as merchantLastName', 'c.zoneId as consignmentZoneId', 'z.id as zoneId')
             ->whereNotNull('c.pickupPointManagerId')
+            ->where('pickupPointManagerId','=',$pickupPointManagerSessionId)
 //            ->whereNotNull('c.managerStatus')
             ->whereNull('c.deliveryBoyId')
             ->orWhere('c.deliveryBoyId', '=', '')
             ->get();
 //        dd(DB::getQueryLog());
-        $employees = Employee::all()->where('employeeType', '=', 'ROLE_DELIVERY_BOY');
+        $employees = Employee::all()->where('employeeType', '=', 'ROLE_DELIVERY_BOY')->where('pickupPointManagerId','=',$pickupPointManagerSessionId);
         return view('ConsignmentAllocationToDeliveryBoy', compact('consignments', 'employees'));
     }
 
@@ -180,7 +186,7 @@ class ConsignmentController extends Controller
     public function consignmentReceivedByDeliveryBoy()
     {
 //        DB::enableQueryLog();
-        $deliveryBoySessionId = 1;
+        $deliveryBoySessionId = session()->get('delivery_boy')["id"];;
         $consignments = DB::table('consignments as c')
             ->join('merchant_registers as m', 'c.merchantId', '=', 'm.id')
             ->join('zones as z', 'c.zoneId', '=', 'z.id')

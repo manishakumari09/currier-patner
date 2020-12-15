@@ -132,18 +132,20 @@ $('.datepicker').datetimepicker({
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
-                                            <form method="post" action="/assign-consignment-to-pp-manager{{$consignment->cId}}">
+                                            <form method="post"
+                                                  action="/assign-consignment-to-pp-manager{{$consignment->cId}}">
                                                 <div class="modal-body">
                                                     @csrf
                                                     @method('PUT')
-                                                    <input type="hidden" name="cId" id="cId" value="{{$consignment->cId}}">
+                                                    <input type="hidden" name="cId" id="cId"
+                                                           value="{{$consignment->cId}}">
                                                     <select class="form-control" name="pickupPointManagerId" id="assign"
                                                             required>
                                                         <option value="">Select PP Manager</option>
-                                                        @foreach($merchants as $merchant)
+                                                        @foreach($ppManager as $ppManagers)
                                                             <option
-                                                                value="{{$merchant->mId}}">{{$merchant->merchantFirstName}} {{$merchant->merchantMiddleName}} {{$merchant->merchantLastName}}
-                                                                ({{$merchant->b_name}})
+{{--                                                                value="{{$ppManager->ppId}}">{{$ppManager->ppFirstName}} {{$ppManager->ppMiddleName}} {{$ppManager->ppLastName}}--}}
+                                                                value="{{$ppManagers->ppId}}">{{$ppManagers->ppFirstName}} {{$ppManagers->ppMiddleName}} {{$ppManagers->ppLastName}}
                                                             </option>
                                                         @endforeach
                                                     </select>
