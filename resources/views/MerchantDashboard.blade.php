@@ -22,7 +22,7 @@
 @if(empty(Session::has('merchant')))
     <script>
         alert("Please login to access this page ");
-        window.location = "/admin";
+        window.location = "/merchant-login";
     </script>
 @endif
 <div class="wrapper">
