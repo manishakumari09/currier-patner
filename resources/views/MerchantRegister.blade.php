@@ -156,7 +156,7 @@
                                         </div> -->
                                         <div class="px-3 py-2">
                                             <div class="w-100 text-left font-14 text-dark">
-                                                Already have an account? <a href="login.html" class="text-red">Login</a>
+                                                Already have an account? <a href="/merchant-login" class="text-red">Login</a>
                                             </div>
                                         </div>
                                         <div class="pb-4 px-3">

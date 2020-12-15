@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use App\MerchantLogin;
 use Auth;
 use DB;
-use Session;
 use Illuminate\Http\Request;
+use Session;
 use Validator;
 
 class MerchantLoginController extends Controller
@@ -115,8 +115,18 @@ class MerchantLoginController extends Controller
             $id = $sessionData[0]->id;
             $role = $sessionData[0]->role;
             $email = $sessionData[0]->email;
-            Session::put('userData', ['email' => $email, 'name' => $name, 'id' => $id, 'role' => $role]);
-            return redirect('/merchant-login/success-login');
+            if ($role == "ROLE_MERCHANT") {
+                Session::put('merchant', ['email' => $email, 'name' => $name, 'id' => $id, 'role' => $role]);
+                return redirect('/MerchantDashboard');
+            } else if ($role == "ROLE_PICKUP_POINT_MANAGER") {
+                Session::put('pp_manager', ['email' => $email, 'name' => $name, 'id' => $id, 'role' => $role]);
+                return redirect('/PPManagerDashboard');
+            } else if ($role == 'ROLE_DELIVERY_BOY') {
+                Session::put('delivery_boy', ['email' => $email, 'name' => $name, 'id' => $id, 'role' => $role]);
+                return redirect('/DeliveryBoyDashboard');
+            } else {
+                return redirect()->back()->with("error", "Email or Password may be wrong");
+            }
         } else {
             return redirect()->back()->with("error", "Email or Password may be wrong");
         }

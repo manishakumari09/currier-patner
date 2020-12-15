@@ -18,10 +18,11 @@ class EmployeeController extends Controller
         $zones = Zone::all();
         $districts = District::all();
         $pickupPointAreas = PickupPointArea::all();
+        $pickPointManager = DB::SELECT("select * from user_login where role = 'ROLE_PICKUP_POINT_MANAGER'");
 //        $employees = Employee::latest()->paginate(10);
         $employees = Employee::all();
         $employeeCode = IdGenerator::generate(['table' => 'employees', 'field' => 'employeeCode', 'length' => 10, 'prefix' => 'EMP-']);
-        return view('employee', ['employeeCode' => $employeeCode], compact('districts', 'zones', 'pickupPointAreas', 'employees'));
+        return view('employee', ['employeeCode' => $employeeCode], compact('districts', 'zones', 'pickupPointAreas', 'employees','pickPointManager'));
     }
 
     /**
@@ -50,6 +51,7 @@ class EmployeeController extends Controller
             $employee->pickupPoint = $request->input('pickupPoint');
             $employee->dateOfJoining = $request->input('dateOfJoining');
             $employee->employeeType = $request->input('role');
+            $employee->	pickupPointManagerId = $request->input('pickupPointManagerId');
             $employee->save();
             //code for insert data in the user table
             $name = $request->input('fName');

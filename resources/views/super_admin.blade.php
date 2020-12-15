@@ -12,7 +12,7 @@
                         <i class="fa fa-key" aria-hidden="true"></i>
                     </div>
                     <div class="col-lg-12 login-title">
-                        Super Admin Login
+                        Admin Login
                     </div>
 
                     <div class="col-lg-12 login-form">

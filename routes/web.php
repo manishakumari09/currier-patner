@@ -37,9 +37,9 @@ Route::get('/pickup', function () {
     return view('pickup');
 });
 
-Route::get('/super-admin', function () {
-    return view('super_admin');
-});
+//Route::get('/super-admin', function () {
+//    return view('super_admin');
+//});
 
 
 // Route::get('/zone', 'ZoneController@allList');
@@ -47,9 +47,9 @@ Route::get('/super-admin', function () {
 // Route::post('/zone', 'ZoneController@store')->name('zone.store');
 
 ##  Merchant ##
-Route::get('/merchant-login', function () {
-    return view('MerchantLogin');
-});
+//Route::get('/merchant-login', function () {
+//    return view('MerchantLogin');
+//});
 Route::get("/merchant-register", "MerchantRegisterController@index");
 // Route::get('/merchantregister_create', 'MerchantRegisterController@create');
 // Route::get('merchantregister_submit', 'MerchantRegisterController@store');

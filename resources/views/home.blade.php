@@ -27,7 +27,7 @@
                             <p class="sub-ft-txt font-17">Easily track your courier, Get courier within hours. Efficient & safe delivery.</p>
                         </div>
                         <div class="py-4">
-                                                                    <a class="btn bg-white border-0 without-focus text-color-0-1 text-uppercase font-medium font-16" href="register" id="gotoregister" role="button">BECOME A MERCHANT</a>
+                                                                    <a class="btn bg-white border-0 without-focus text-color-0-1 text-uppercase font-medium font-16" href="/merchant-register" id="gotoregister" role="button">BECOME A MERCHANT</a>
                                                                 </div>
                     </div>
                 </div>
