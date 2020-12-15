@@ -17,8 +17,9 @@ class ConsignmentController extends Controller
 
     public function index()
     {
+      $merchantId = session()->get('merchant')["id"];
         $zones = Zone::all();
-        $consignments = Consignment::latest()->paginate(10);
+        $consignments = Consignment::all()->where('merchantId', '=', $merchantId);
         return view('ConsigmentEntry', compact('zones'), compact('consignments'));
     }
 
@@ -46,7 +47,7 @@ class ConsignmentController extends Controller
             $consignment->remark = $request->remarks;
             $consignment->zoneId = $request->zoneId;
             $consignment->trackingId = $trackingId;
-            $consignment->merchantId = 9;
+            $consignment->merchantId = session()->get('merchant')["id"];
             $consignment->save();
             return redirect()
                 ->back()

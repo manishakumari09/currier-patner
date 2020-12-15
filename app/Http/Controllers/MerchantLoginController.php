@@ -146,4 +146,5 @@ class MerchantLoginController extends Controller
         Auth::logout();
         return Redirect('merchant-login');
     }
+
 }

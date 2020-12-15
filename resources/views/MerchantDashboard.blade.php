@@ -19,6 +19,12 @@
 </head>
 
 <body class="hold-transition sidebar-mini">
+@if(empty(Session::has('merchant')))
+    <script>
+        alert("Please login to access this page ");
+        window.location = "/admin";
+    </script>
+@endif
 <div class="wrapper">
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -159,7 +165,7 @@
           <img src="{{asset('assets/icon/img/avatar.png')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Manisha Kumari</a>
+          <a href="#" class="d-block">{{ session()->get('merchant')["name"] }}</a>
         </div>
       </div>
 
@@ -203,6 +209,15 @@
               </li>
             </ul>
           </li>
+            <li class="nav-item">
+                <a href="/merchant-login/logout" class="nav-link">
+                    <i class="nav-icon fas fa-th"></i>
+                    <p>
+                        Logout
+                        <span class="right badge badge-danger">New</span>
+                    </p>
+                </a>
+            </li>
           <!-- <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
